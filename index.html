@@ -1,73 +1,65 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roots N Branch Siva Academy</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fdfaf5;
+      color: #222;
+      background-image: url('sogaimiti-background.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    header {
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      border-bottom: 12px solid #004d40;
+    }
+    .section {
+      padding: 3rem;
+      border-bottom: 4px dashed #004d40;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    footer {
+      background-color: #004d40;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+  </style>
 </head>
-<body class="bg-black text-white font-sans">
-
-  <!-- Hero Section with Logo -->
-  <section class="bg-teal-700 text-white py-20 px-6 text-center">
-    <img src="logo.png" alt="Roots N Branch Logo" class="mx-auto mb-8 w-48 md:w-72 lg:w-80">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Roots N Branch Siva Academy</h1>
-    <p class="text-lg md:text-xl max-w-3xl mx-auto">
-      Bridging generations through Samoan tradition and modern movement.
-    </p>
-  </section>
-
-  <!-- About Section -->
-  <section class="py-16 px-6 bg-gray-900 text-center">
-    <h2 class="text-3xl font-bold mb-4">Our Story</h2>
-    <p class="max-w-2xl mx-auto text-lg text-gray-300">
-      At RNB, we blend traditional Samoan dance forms like <em>Siva</em> and <em>Fa’ataupati</em> (Roots) with 
-      contemporary dance styles (Branch). Our choreography mixes vibrant modern beats with 
-      timeless Samoan songs—keeping culture alive, relevant, and powerful for every generation.
-    </p>
-  </section>
-
-  <!-- What We Offer -->
-  <section class="py-16 px-6 bg-black text-center">
-    <h2 class="text-3xl font-bold mb-6">What We Offer</h2>
-    <div class="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
-      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
-        <h3 class="text-xl font-semibold mb-2">Workshops & Classes</h3>
-        <p>Learn foundational Siva and Fa’ataupati, as well as contemporary dance fusion.</p>
-      </div>
-      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
-        <h3 class="text-xl font-semibold mb-2">Performances</h3>
-        <p>We bring energy to the stage with a fusion of tradition and today’s rhythm.</p>
-      </div>
-      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
-        <h3 class="text-xl font-semibold mb-2">Cultural Education</h3>
-        <p>Engage in the deeper meaning of Samoan movement and storytelling.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="py-16 px-6 bg-gray-800 text-center">
-    <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-    <p class="text-lg text-gray-300 mb-6">Want to collaborate, book a workshop, or join a class?</p>
-    <form action="https://formsubmit.co/info@rnbacademy.com" method="POST" class="max-w-xl mx-auto space-y-4">
-      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-700 text-white" />
-      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-700 text-white" />
-      <textarea name="message" placeholder="Your Message" required class="w-full p-3 rounded bg-gray-700 text-white" rows="5"></textarea>
-      <button type="submit" class="bg-teal-600 hover:bg-teal-500 py-3 px-6 rounded-full font-semibold text-white">Send Message</button>
+<body>
+  <header>
+    <h1>Roots N Branch Siva Academy</h1>
+    <p>Preserving culture through the rhythm of time.</p>
+  </header>
+  <div class="section">
+    <h2>Our Story</h2>
+    <p>Blending traditional Samoan Siva and Fa'ataupati with modern dance to keep culture alive for all generations.</p>
+  </div>
+  <div class="section">
+    <h2>Classes & Programs</h2>
+    <p>From foundational fa'asamoa movements to contemporary choreography with island flavor.</p>
+  </div>
+  <div class="section">
+    <h2>Contact Us</h2>
+    <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required /><br><br>
+      <input type="email" name="email" placeholder="Your Email" required /><br><br>
+      <textarea name="message" placeholder="Your Message" required></textarea><br><br>
+      <button type="submit">Send</button>
     </form>
-  </section>
-
-  <!-- Footer with Socials -->
-  <footer class="bg-black text-gray-500 py-6 text-center space-y-4">
-    <div>
-      <a href="https://www.facebook.com/profile.php?id=61575368349358&sk=about" target="_blank" class="text-teal-400 hover:underline">Follow us on Facebook</a>
-    </div>
-    <div>
-      &copy; 2025 Roots N Branch Siva Academy. All rights reserved.
-    </div>
+  </div>
+  <footer>
+    <p>Follow us on Facebook | Contact: info@example.com</p>
   </footer>
-
 </body>
 </html>
