@@ -7,73 +7,19 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-<body> 
-<section id="contact" style="background-color: #002e2e; color: white; padding: 4rem 2rem; font-family: 'Arial', sans-serif; text-align: center;">
-  <h2 style="font-size: 2.2rem; margin-bottom: 1rem; font-weight: bold; text-transform: uppercase;">📋 Pre-Registration / Waitlist</h2>
-  <p style="font-size: 1.1rem; margin-bottom: 2rem;">Sign up to get notified when classes open! Stay in the loop with RNB Siva Academy.</p>
+<body class="bg-black text-white">
 
-  <form action="https://formsubmit.co/rootsnbranchacademy@hotmail.com" method="POST" style="max-width: 600px; margin: 0 auto; background-color: #004d40; padding: 2rem; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.4);">
-    <!-- FormSubmit settings -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://yourgithubusername.github.io/thank-you.html">
-
-    <label for="name" style="font-weight: bold;">Name:</label><br>
-    <input type="text" name="name" required style="width: 100%; padding: 0.7rem; margin: 0.5rem 0 1rem 0; border: none; border-radius: 5px;"><br>
-
-    <label for="email" style="font-weight: bold;">Email:</label><br>
-    <input type="email" name="email" required style="width: 100%; padding: 0.7rem; margin: 0.5rem 0 1rem 0; border: none; border-radius: 5px;"><br>
-
-    <label for="class" style="font-weight: bold;">Class Interest:</label><br>
-    <select name="class" required style="width: 100%; padding: 0.7rem; margin: 0.5rem 0 1rem 0; border: none; border-radius: 5px;">
-      <option value="">-- Select a Class --</option>
-      <option value="Kids Siva">Kids Siva</option>
-      <option value="Teen to Adult Siva (Males Only)">Teen to Adult Siva (Males Only)</option>
-      <option value="Siva X Hip Hop">Siva X Hip Hop</option>
-      <option value="Siva Fit">Siva Fit</option>
-      <option value="RNB Showcase Crew">RNB Showcase Crew</option>
-    </select><br>
-
-    <label
-
-<section style="padding: 4rem 2rem; background-color: bg-teal-800; color: black; font-family: 'Arial', sans-serif; text-align: center;">
-  <h2 style="font-size: 2.5rem; margin-bottom: 2rem; font-weight: bold; text-transform: uppercase;">🔥 Roots N Branch Siva Academy – Class Structure 🔥</h2>
-
-  <div style="margin-bottom: 3rem;">
-    <h3 style="font-size: 1.8rem; font-weight: bold;">👦🏽 Kids Siva (Ages 5–10)</h3>
-    <p style="font-size: 1.1rem;">A fun intro to Samoan Siva, rhythm, and storytelling. Builds confidence, coordination, and cultural pride.</p>
-  </div>
-
-  <div style="margin-bottom: 3rem;">
-    <h3 style="font-size: 1.8rem; font-weight: bold;">🧑🏽‍🦱 Teen to Adult Siva (Males Only)</h3>
-    <p style="font-size: 1.1rem;">Traditional Siva & Fa’ataupati classes for young men focused on strength, cultural discipline, and performance skills.</p>
-  </div>
-
-  <div style="margin-bottom: 3rem;">
-    <h3 style="font-size: 1.8rem; font-weight: bold;">🎶 Siva X Hip Hop (Teen to Adult)</h3>
-    <p style="font-size: 1.1rem;">Fusion of Siva with hip hop and modern movement. Choreography to remixes and beats that blend past and present. Open to all genders.</p>
-  </div>
-
-  <div style="margin-bottom: 3rem;">
-    <h3 style="font-size: 1.8rem; font-weight: bold;">💪🏽 Siva Fit</h3>
-    <p style="font-size: 1.1rem;">Cardio-based movement inspired by traditional Siva and Fa’ataupati. Boost stamina, build strength, and stay rooted in culture. Open to all levels.</p>
-  </div>
-
-  <div style="margin-bottom: 3rem;">
-    <h3 style="font-size: 1.8rem; font-weight: bold;">🌟 RNB
-
-  </div>
-</section>
-  <!-- Hero Section with Logo -->
-  <section class="bg-teal-700 text-white py-20 px-6 text-center">
-    <img src="logo.png" alt="Roots N Branch Logo" class="mx-auto mb-6 w-40 md:w-56">
-    <h1 class="text-4xl md:text-6xl font-bold mb-4">Roots N Branch Siva Academy</h1>
-    <p class="text-lg md:text-xl max-w-3xl mx-auto">
+  <!-- ✅ Fixed Hero Section with Logo -->
+  <section class="bg-teal-700 text-white py-12 px-6 text-center fixed top-0 left-0 w-full z-50 shadow-lg">
+    <img src="logo.png" alt="Roots N Branch Logo" class="mx-auto mb-4 w-28 md:w-40">
+    <h1 class="text-3xl md:text-5xl font-bold mb-2">Roots N Branch Siva Academy</h1>
+    <p class="text-md md:text-lg max-w-3xl mx-auto">
       Bridging generations through Samoan tradition and modern movement.
     </p>
   </section>
 
-  <!-- About Section -->
-  <section class="py-16 px-6 bg-gray-900 text-center">
+  <!-- ✅ Padded About Section so it's not hidden behind the hero -->
+  <section class="pt-[250px] py-16 px-6 bg-gray-900 text-center">
     <h2 class="text-3xl font-bold mb-4">Our Story</h2>
     <p class="max-w-2xl mx-auto text-lg text-gray-300">
       At RNB, we blend traditional Samoan dance forms like <em>Siva</em> and <em>Fa’ataupati</em> (Roots) with 
@@ -101,15 +47,62 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section class="py-16 px-6 bg-gray-800 text-center">
-    <h2 class="text-3xl font-bold mb-4">Get In Touch</h2>
-    <p class="text-lg text-gray-300 mb-6">Want to collaborate, book a workshop, or join a class?</p>
-    <form action="https://formsubmit.co/info@rnbacademy.com" method="POST" class="max-w-xl mx-auto space-y-4">
-      <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 rounded bg-gray-700 text-white" />
-      <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 rounded bg-gray-700 text-white" />
-      <textarea name="message" placeholder="Your Message" required class="w-full p-3 rounded bg-gray-700 text-white" rows="5"></textarea>
-      <button type="submit" class="bg-teal-600 hover:bg-teal-500 py-3 px-6 rounded-full font-semibold text-white">Send Message</button>
+  <!-- Class Structure Section -->
+  <section style="padding: 4rem 2rem; background-color: #004d40; color: white; text-align: center;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 2rem; font-weight: bold; text-transform: uppercase;">🔥 Roots N Branch Siva Academy – Class Structure 🔥</h2>
+
+    <div style="margin-bottom: 3rem;">
+      <h3 style="font-size: 1.8rem; font-weight: bold;">👦🏽 Kids Siva (Ages 5–10)</h3>
+      <p style="font-size: 1.1rem;">A fun intro to Samoan Siva, rhythm, and storytelling. Builds confidence, coordination, and cultural pride.</p>
+    </div>
+
+    <div style="margin-bottom: 3rem;">
+      <h3 style="font-size: 1.8rem; font-weight: bold;">🧑🏽‍🦱 Teen to Adult Siva (Males Only)</h3>
+      <p style="font-size: 1.1rem;">Traditional Siva & Fa’ataupati classes for young men focused on strength, cultural discipline, and performance skills.</p>
+    </div>
+
+    <div style="margin-bottom: 3rem;">
+      <h3 style="font-size: 1.8rem; font-weight: bold;">🎶 Siva X Hip Hop (Teen to Adult)</h3>
+      <p style="font-size: 1.1rem;">Fusion of Siva with hip hop and modern movement. Choreography to remixes and beats that blend past and present. Open to all genders.</p>
+    </div>
+
+    <div style="margin-bottom: 3rem;">
+      <h3 style="font-size: 1.8rem; font-weight: bold;">💪🏽 Siva Fit</h3>
+      <p style="font-size: 1.1rem;">Cardio-based movement inspired by traditional Siva and Fa’ataupati. Boost stamina, build strength, and stay rooted in culture. Open to all levels.</p>
+    </div>
+
+    <div style="margin-bottom: 3rem;">
+      <h3 style="font-size: 1.8rem; font-weight: bold;">🌟 RNB Showcase Crew</h3>
+      <p style="font-size: 1.1rem;">Elite crew of passionate dancers representing the academy at community and stage events.</p>
+    </div>
+  </section>
+
+  <!-- Pre-Registration Form Section -->
+  <section id="contact" style="background-color: #002e2e; color: white; padding: 4rem 2rem; font-family: 'Arial', sans-serif; text-align: center;">
+    <h2 style="font-size: 2.2rem; margin-bottom: 1rem; font-weight: bold; text-transform: uppercase;">📋 Pre-Registration / Waitlist</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem;">Sign up to get notified when classes open! Stay in the loop with RNB Siva Academy.</p>
+
+    <form action="https://formsubmit.co/rootsnbranchacademy@hotmail.com" method="POST" style="max-width: 600px; margin: 0 auto; background-color: #004d40; padding: 2rem; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.4);">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourgithubusername.github.io/thank-you.html">
+
+      <label for="name" style="font-weight: bold;">Name:</label><br>
+      <input type="text" name="name" required style="width: 100%; padding: 0.7rem; margin: 0.5rem 0 1rem 0; border: none; border-radius: 5px;"><br>
+
+      <label for="email" style="font-weight: bold;">Email:</label><br>
+      <input type="email" name="email" required style="width: 100%; padding: 0.7rem; margin: 0.5rem 0 1rem 0; border: none; border-radius: 5px;"><br>
+
+      <label for="class" style="font-weight: bold;">Class Interest:</label><br>
+      <select name="class" required style="width: 100%; padding: 0.7rem; margin: 0.5rem 0 1rem 0; border: none; border-radius: 5px;">
+        <option value="">-- Select a Class --</option>
+        <option value="Kids Siva">Kids Siva</option>
+        <option value="Teen to Adult Siva (Males Only)">Teen to Adult Siva (Males Only)</option>
+        <option value="Siva X Hip Hop">Siva X Hip Hop</option>
+        <option value="Siva Fit">Siva Fit</option>
+        <option value="RNB Showcase Crew">RNB Showcase Crew</option>
+      </select><br>
+
+      <button type="submit" style="background-color: #00bfa5; color: white; padding: 0.7rem 1.5rem; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Join the Waitlist</button>
     </form>
   </section>
 
