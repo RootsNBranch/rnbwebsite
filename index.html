@@ -63,53 +63,86 @@
   </section>
 
     <!-- ✅ Classes Section -->
-    <section id="classes" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-      <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card" onclick="playClickSound()">
-        <h2 class="text-2xl font-semibold mb-2">Kids Siva</h2>
-        <p>Introduces our young ones to the beauty of Samoan dance through movements, timing and storytelling. It's designed to help them grow in confidence, cultural identity and group connection in a fun and safe space.</p>
-        <p class="mt-2"><strong>Duration:</strong> 45 min</p>
-        <p><strong>Age Group:</strong> 5–12 yrs</p>
-      </div>
+   <section id="classes" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
 
-      <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card" onclick="playClickSound()">
-        <h2 class="text-2xl font-semibold mb-2">Teen to Adult Siva (Males Only)</h2>
-        <p>Focus on stamina, tradition & precise movements.</p>
-        <p><strong>Music:</strong> Mixture of old Samoan, modern Samoan music and drumming</p>
-        <p class="mt-2"><strong>Duration:</strong> 60 min</p>
-        <p><strong>Age Group:</strong> 13+ yrs</p>
-      </div>
+  <!-- Kids Siva -->
+  <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+    <h2 onclick="toggleCollapse('kidsSiva')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+      Kids Siva
+    </h2>
+    <div id="kidsSiva" class="hidden">
+      <p>Introduces our young ones to the beauty of Samoan dance through movements, timing and storytelling. It's designed to help them grow in confidence, cultural identity and group connection in a fun and safe space.</p>
+      <p class="mt-2"><strong>Duration:</strong> 45 min</p>
+      <p><strong>Age Group:</strong> 5–12 yrs</p>
+    </div>
+  </div>
 
-      <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card" onclick="playClickSound()">
-        <h2 class="text-2xl font-semibold mb-2">Siva X</h2>
-        <p>Siva X is using Samoan movements with upbeat current music creating a freedom of Xpression—a twist that still incorporates the Samoan movements, for example a fa’ataupati or siva Samoa—bridging the past with the present, flaunting the branches while respecting the roots.</p>
-        <p><strong>Focus:</strong> Stamina, Samoan movements, expression and fun</p>
-        <p><strong>Music:</strong> High energy fusion, mixture of all genres that are upbeat</p>
-        <p class="mt-2"><strong>Duration:</strong> 60 min</p>
-        <p><strong>Open To:</strong> 13+ males</p>
-      </div>
+  <!-- Teen to Adult -->
+  <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+    <h2 onclick="toggleCollapse('teenSiva')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+      Teen to Adult Siva (Males Only)
+    </h2>
+    <div id="teenSiva" class="hidden">
+      <p>Focus on stamina, tradition & precise movements.</p>
+      <p><strong>Music:</strong> Mixture of old Samoan, modern Samoan music and drumming</p>
+      <p class="mt-2"><strong>Duration:</strong> 60 min</p>
+      <p><strong>Age Group:</strong> 13+ yrs</p>
+    </div>
+  </div>
 
-      <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card" onclick="playClickSound()">
-        <h2 class="text-2xl font-semibold mb-2">Siva Fit</h2>
-        <p>High energy, sweat-dripping, endorphin-boosting fitness using Samoan dance. No two classes are the same.</p>
-        <p><strong>Focus:</strong> Cardio, strength and stamina through movement</p>
-        <p><strong>Music:</strong> Fusion of Island beats and workout hits</p>
-        <p class="mt-2"><strong>Duration:</strong> 45 min</p>
-        <p><strong>All fitness levels welcome</strong></p>
-      </div>
+  <!-- Siva X -->
+  <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+    <h2 onclick="toggleCollapse('sivaX')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+      Siva X
+    </h2>
+    <div id="sivaX" class="hidden">
+      <p>Siva X is using Samoan movements with upbeat current music creating a freedom of Xpression—a twist that still incorporates the Samoan movements, for example a fa’ataupati or siva Samoa—bridging the past with the present, flaunting the branches while respecting the roots.</p>
+      <p><strong>Focus:</strong> Stamina, Samoan movements, expression and fun</p>
+      <p><strong>Music:</strong> High energy fusion, mixture of all genres that are upbeat</p>
+      <p class="mt-2"><strong>Duration:</strong> 60 min</p>
+      <p><strong>Open To:</strong> 13+ males</p>
+    </div>
+  </div>
 
-      <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card" onclick="playClickSound()">
-        <h2 class="text-2xl font-semibold mb-2">RNB Showcase Crew</h2>
-        <p>This is a performance-based class for those wanting to take their siva to the next level. Choreography heavy and pushing creative boundaries through movement, storytelling and stage presence.</p>
-        <p class="mt-2"><strong>Duration:</strong> 60 min</p>
-        <p><strong>Open To:</strong> Invitation or audition based</p>
-      </div>
+  <!-- Siva Fit -->
+  <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+    <h2 onclick="toggleCollapse('sivaFit')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+      Siva Fit
+    </h2>
+    <div id="sivaFit" class="hidden">
+      <p>High energy, sweat-dripping, endorphin-boosting fitness using Samoan dance. No two classes are the same.</p>
+      <p><strong>Focus:</strong> Cardio, strength and stamina through movement</p>
+      <p><strong>Music:</strong> Fusion of Island beats and workout hits</p>
+      <p class="mt-2"><strong>Duration:</strong> 45 min</p>
+      <p><strong>All fitness levels welcome</strong></p>
+    </div>
+  </div>
 
-      <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card" onclick="playClickSound()">
-        <h2 class="text-2xl font-semibold mb-2">Culture Workshop</h2>
-        <p>Culture Workshop is a chance for RNB students and community to connect to other Polynesian, Melanesian and Micronesian cultures. RNB works closely with community leaders and performers to teach about their culture and dance.</p>
-        <p class="mt-2"><strong>Frequency:</strong> Monthly or special event based</p>
-      </div>
-    </section>
+  <!-- RNB Showcase Crew -->
+  <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+    <h2 onclick="toggleCollapse('showcase')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+      RNB Showcase Crew
+    </h2>
+    <div id="showcase" class="hidden">
+      <p>This is a performance-based class for those wanting to take their siva to the next level. Choreography heavy and pushing creative boundaries through movement, storytelling and stage presence.</p>
+      <p class="mt-2"><strong>Duration:</strong> 60 min</p>
+      <p><strong>Open To:</strong> Invitation or audition based</p>
+    </div>
+  </div>
+
+  <!-- Culture Workshop -->
+  <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+    <h2 onclick="toggleCollapse('workshop')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+      Culture Workshop
+    </h2>
+    <div id="workshop" class="hidden">
+      <p>Culture Workshop is a chance for RNB students and community to connect to other Polynesian, Melanesian and Micronesian cultures. RNB works closely with community leaders and performers to teach about their culture and dance.</p>
+      <p class="mt-2"><strong>Frequency:</strong> Monthly or special event based</p>
+    </div>
+  </div>
+
+</section>
+
 
     <!-- ✅ Pre-Registration / Waitlist Section -->
     <section id="pre-register" class="bg-gray-900 border-l-4 border-teal-500 rounded-lg shadow p-6 mb-16">
