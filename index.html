@@ -117,11 +117,18 @@
        <section id="class-options" class="bg-black text-white py-16 px-6 text-center">
   <h2 class="text-3xl font-bold mb-8">Choose a Class</h2>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-
-    <div onclick="location.href='#kidsSiva';" class="cursor-pointer bg-teal-800 p-6 rounded-xl hover:bg-teal-600 transition">
-      <h3 class="text-xl font-bold mb-2">👦🏽 Kids Siva</h3>
-      <p>Intro to rhythm and cultural movement for kids aged 5–10.</p>
-    </div>
+<div class="bg-teal-800 p-6 rounded-2xl shadow-xl cursor-pointer transition hover:bg-teal-700" onclick="toggleInfo('kidsSiva')">
+  <h3 class="text-xl font-semibold mb-2">👦🏽 Kids Siva (Ages 7–12)</h3>
+  <p>Tap to learn more!</p>
+  <div id="kidsSiva" class="mt-4 hidden transition-all duration-500 ease-in-out text-left text-gray-100">
+    <p class="mb-2">Kids Siva introduces tamaiti to the beauty of Samoan dance through rhythm, movement, and storytelling. It’s designed to help them grow in confidence, cultural identity, and group connection in a fun and safe space.</p>
+    <ul class="list-disc pl-6 text-sm text-gray-200">
+      <li>Class duration: 45 mins</li>
+      <li>Age group: 7–12 years</li>
+      <li>Focus: Coordination, rhythm, cultural pride</li>
+      <li>Music: Traditional Samoan beats + modern remixes</li>
+    </ul>
+  </div>
 
     <div onclick="playClick-Sound.mp3.mp3(); location.href='#teenAdultSiva';" class="cursor-pointer bg-teal-800 p-6 rounded-xl hover:bg-teal-600 transition">
       <h3 class="text-xl font-bold mb-2">🧑🏽‍🦱 Teen to Adult Siva (Males Only)</h3>
