@@ -64,21 +64,22 @@
         transform: scaleX(1.05);
       }
     }
- @keyframes fadeInSmooth {
+ <style>
+  @keyframes slideDownSmooth {
     0% {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(-30px);
     }
     100% {
       opacity: 1;
       transform: translateY(0);
     }
   }
-
-  .fade-in-smooth {
-    animation: fadeInSmooth 1.5s ease-out forwards;
+  .slide-down-smooth {
+    animation: slideDownSmooth 1.5s ease-out forwards;
   }
-  </style>
+</style>
+
 </head>
 
 <body class="text-white font-sans">
