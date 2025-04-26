@@ -135,6 +135,20 @@
       &copy; 2025 Roots N Branch Siva Academy. All rights reserved.
     </div>
   </footer>
+<audio id="clickSound" src="click-sound.mp3" preload="auto"></audio>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const clickSound = document.getElementById("clickSound");
+    const clickableItems = document.querySelectorAll(".play-sound");
+
+    clickableItems.forEach(el => {
+      el.addEventListener("click", () => {
+        clickSound.currentTime = 0;
+        clickSound.play();
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
