@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roots N Branch Siva Academy</title>
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
+    /* Cursor + Layout */
     body {
       cursor: url('samoan_cursor_resized.png'), auto;
       padding-top: 100px; /* Makes room for fixed header */
@@ -21,6 +23,43 @@
     }
     .class-card {
       cursor: pointer;
+    }
+
+    /* Word of the Day Animation */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in-slow {
+      animation: fadeInUp 1.2s ease-out forwards;
+      position: relative;
+    }
+    .animate-fade-in-slow::after {
+      content: "";
+      display: block;
+      margin: 0 auto;
+      margin-top: 8px;
+      width: 80px;
+      height: 3px;
+      background-image: repeating-linear-gradient(45deg, white, white 5px, transparent 5px, transparent 10px);
+      animation: pulse 2s infinite;
+      border-radius: 3px;
+    }
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.6;
+        transform: scaleX(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scaleX(1.05);
+      }
     }
   </style>
 </head>
@@ -144,8 +183,11 @@
 </section>
 
 <section class="bg-teal-900 text-white p-6 rounded-xl shadow-lg mb-12 text-center">
-  <h2 class="text-2xl font-bold mb-2">📖 Word of the Day (Upu o le Aso)</h2>
-  <p class="text-xl" id="samoanWord"></p>
+  <h2 class="text-2xl font-bold mb-4">📖 Word of the Day <span class="text-sm italic text-teal-200">(Upu o le Aso)</span></h2>
+  
+  <div id="samoanWord" class="text-3xl font-extrabold text-white animate-fade-in-slow relative inline-block">
+    <!-- JS will insert word here -->
+  </div>
 </section>
 
 
@@ -221,8 +263,8 @@
 
   const random = words[Math.floor(Math.random() * words.length)];
   document.getElementById("samoanWord").innerHTML = `
-    <strong>${random.samoan}</strong> – <em>${random.english}</em><br/>
-    <small class="text-gray-300 italic">Pronounced: ${random.tip}</small>
+    ${random.samoan}<br/>
+    <span class="block text-lg font-medium mt-2 text-teal-200 italic animate-pulse">"${random.english}" – ${random.tip}</span>
   `;
 </script>
 
