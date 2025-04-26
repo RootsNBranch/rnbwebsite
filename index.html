@@ -64,6 +64,20 @@
         transform: scaleX(1.05);
       }
     }
+ @keyframes fadeInSmooth {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-smooth {
+    animation: fadeInSmooth 1.5s ease-out forwards;
+  }
   </style>
 </head>
 
@@ -78,7 +92,7 @@
 <main class="pt-12 max-w-5xl mx-auto px-4">
 
   <!-- ✅ About Section -->
-  <section class="text-center mb-12 pt-28">
+  <section class="text-center mb-12 pt-35 fade-in-smooth">
     <h1 class="text-4xl font-bold text-white mb-4">Roots N Branch Siva Academy</h1>
     <p class="text-lg text-gray-300">
       At RNB, we blend traditional Samoan dance forms like <em>Siva</em> and <em>Fa’ataupati</em> (Roots) with
