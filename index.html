@@ -8,30 +8,31 @@
   <style>
     body {
       cursor: url('samoan_cursor_resized.png'), auto;
+      padding-top: 100px; /* Makes room for fixed header */
     }
     .sticky-logo {
       position: fixed;
       top: 0;
       left: 0;
       z-index: 50;
-      background-color: #000;
+      background-color: #0f766e;
       padding: 0.5rem;
+      width: 100%;
     }
     .class-card {
       cursor: pointer;
     }
   </style>
 </head>
-<body class="bg-black text-white">
+<body class="bg-black text-white font-sans">
 
-  <!-- Fixed Header -->
-<header class="fixed top-0 left-0 w-full bg-teal-700 z-50 shadow-lg px-4 py-3 flex items-center justify-center">
-  <img src="logo.png" alt="Roots N Branch Logo" class="h-16 w-auto">
-</header>
+  <!-- ✅ Fixed Header -->
+  <header class="sticky-logo shadow-lg text-center">
+    <img src="logo.png" alt="Roots N Branch Logo" class="h-16 w-auto mx-auto">
+  </header>
 
-
-  <main class="pt-24 max-w-5xl mx-auto px-4">
-    <!-- About Section -->
+  <main class="pt-12 max-w-5xl mx-auto px-4">
+    <!-- ✅ About Section -->
     <section class="text-center mb-12">
       <h1 class="text-4xl font-bold text-white mb-4">Roots N Branch Siva Academy</h1>
       <p class="text-lg text-gray-300">
@@ -41,9 +42,8 @@
       </p>
     </section>
 
-    <!-- Classes -->
+    <!-- ✅ Classes Section -->
     <section id="classes" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-      <!-- Example Class Card -->
       <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card" onclick="playClickSound()">
         <h2 class="text-2xl font-semibold mb-2">Kids Siva</h2>
         <p>Introduces our young ones to the beauty of Samoan dance through movements, timing and storytelling. It's designed to help them grow in confidence, cultural identity and group connection in a fun and safe space.</p>
@@ -91,7 +91,7 @@
       </div>
     </section>
 
-    <!-- Pre-Registration -->
+    <!-- ✅ Pre-Registration / Waitlist Section -->
     <section id="pre-register" class="bg-gray-900 border-l-4 border-teal-500 rounded-lg shadow p-6 mb-16">
       <h2 class="text-2xl font-semibold text-white mb-4">📋 Pre-Registration / Waitlist</h2>
       <form action="https://formsubmit.co/rootsnbranchacademy@hotmail.com" method="POST" class="grid gap-4">
@@ -113,7 +113,7 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- ✅ Footer -->
   <footer class="bg-black text-gray-500 py-6 text-center space-y-4">
     <div>
       <a href="https://www.facebook.com/profile.php?id=61575368349358&sk=about" target="_blank" class="text-teal-400 hover:underline">Follow us on Facebook</a>
@@ -123,7 +123,7 @@
     </div>
   </footer>
 
-  <!-- Audio -->
+  <!-- ✅ Click Sound -->
   <audio id="clickSound" src="dbd3f683-9c77-44a1-adb4-a83780ee574a.mp3"></audio>
   <script>
     function playClickSound() {
