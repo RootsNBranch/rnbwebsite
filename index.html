@@ -92,7 +92,11 @@
     #loader {
       transition: opacity 0.5s ease;
     }
-<!-- Add this hidden audio tag somewhere in your body -->
+  </style>
+</head>
+
+<body class="text-white font-sans">
+
 <audio id="backgroundMusic" src=rnb-intro.mp3 preload="auto"></audio>
 
 <script>
@@ -112,12 +116,6 @@
   window.addEventListener('click', startMusicOnce);
   window.addEventListener('scroll', startMusicOnce);
 </script>
-
-  </style>
-</head>
-
-<body class="text-white font-sans">
-
 <!-- ✅ Loader -->
 <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
   <img src="logo.png" alt="Loading..." class="h-28 animate-pulse">
