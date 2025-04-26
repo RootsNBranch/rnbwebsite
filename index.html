@@ -114,12 +114,42 @@
 
       <label for="class" style="font-weight: bold;">Class Interest:</label><br>
       <select name="class" required style="width: 100%; padding: 0.7rem; margin: 0.5rem 0 1rem 0; border: none; border-radius: 5px;">
-        <option value="">-- Select a Class --</option>
-        <option value="Kids Siva">Kids Siva</option>
-        <option value="Teen to Adult Siva (Males Only)">Teen to Adult Siva (Males Only)</option>
-        <option value="Siva X Hip Hop">Siva X Hip Hop</option>
-        <option value="Siva Fit">Siva Fit</option>
-        <option value="RNB Showcase Crew">RNB Showcase Crew</option>
+       <section id="class-options" class="bg-black text-white py-16 px-6 text-center">
+  <h2 class="text-3xl font-bold mb-8">Choose a Class</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+    <div onclick="location.href='#kidsSiva';" class="cursor-pointer bg-teal-800 p-6 rounded-xl hover:bg-teal-600 transition">
+      <h3 class="text-xl font-bold mb-2">👦🏽 Kids Siva</h3>
+      <p>Intro to rhythm and cultural movement for kids aged 5–10.</p>
+    </div>
+
+    <div onclick="playClick-Sound.mp3.mp3(); location.href='#teenAdultSiva';" class="cursor-pointer bg-teal-800 p-6 rounded-xl hover:bg-teal-600 transition">
+      <h3 class="text-xl font-bold mb-2">🧑🏽‍🦱 Teen to Adult Siva (Males Only)</h3>
+      <p>Build strength and tradition with Siva & Fa’ataupati for males.</p>
+    </div>
+
+    <div onclick="location.href='#sivaHipHop';" class="cursor-pointer bg-teal-800 p-6 rounded-xl hover:bg-teal-600 transition">
+      <h3 class="text-xl font-bold mb-2">🎶 Siva X Hip Hop</h3>
+      <p>Modern fusion of Siva movement and Hip Hop beats.</p>
+    </div>
+
+    <div onclick="location.href='#sivaFit';" class="cursor-pointer bg-teal-800 p-6 rounded-xl hover:bg-teal-600 transition">
+      <h3 class="text-xl font-bold mb-2">💪🏽 Siva Fit</h3>
+      <p>Culture-inspired fitness workouts with rhythm and cardio.</p>
+    </div>
+
+    <div onclick="location.href='#showcaseCrew';" class="cursor-pointer bg-teal-800 p-6 rounded-xl hover:bg-teal-600 transition">
+      <h3 class="text-xl font-bold mb-2">🌟 RNB Showcase Crew</h3>
+      <p>Performance crew representing the academy in style.</p>
+    </div>
+
+    <div onclick="location.href='#cultureWorkshop';" class="cursor-pointer bg-teal-800 p-6 rounded-xl hover:bg-teal-600 transition">
+      <h3 class="text-xl font-bold mb-2">🌺 Culture Workshop</h3>
+      <p>Deep dive into Samoan culture, history, and movement.</p>
+    </div>
+
+  </div>
+</section>
       </select><br>
 
       <button type="submit" style="background-color: #00bfa5; color: white; padding: 0.8rem 2rem; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Submit</button>
