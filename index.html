@@ -9,7 +9,7 @@
   <style>
     body {
       cursor: url('samoan_cursor_resized.png') 16 16, auto;
-      padding-top: 100px; /* Make room for fixed header */
+      padding-top: 140px; /* ensures fixed hero doesn't overlap content */
     }
     .fixed-hero {
       position: fixed;
@@ -22,117 +22,155 @@
       text-align: center;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
-    .class-info {
+    .hidden-info {
       display: none;
-      margin-top: 1rem;
-      text-align: left;
     }
-    .class-info.show {
+    .show {
       display: block;
-      animation: slideIn 0.5s ease forwards;
-    }
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
-
 <body class="bg-black text-white font-sans">
 
-  <!-- Header -->
+  <!-- Hero -->
   <header class="fixed-hero">
     <img src="logo.png" alt="Roots N Branch Logo" class="mx-auto w-20 md:w-24 mb-2">
     <h1 class="text-xl md:text-2xl font-bold">Roots N Branch Siva Academy</h1>
-    <p class="text-sm md:text-base text-gray-200">Bridging generations through Samoan tradition and modern Dance/Siva </p>
+    <p class="text-sm md:text-base text-gray-200">Bridging generations through Samoan tradition and modern movement</p>
   </header>
+
+  <!-- About -->
+  <section class="pt-10 pb-20 px-6 bg-gray-900 text-center">
+    <h2 class="text-3xl font-bold mb-4">Our Story</h2>
+    <p class="max-w-2xl mx-auto text-lg text-gray-300">
+      At RNB, we blend traditional Samoan dance forms like <em>Siva</em> and <em>Fa’ataupati</em> (Roots) with 
+      contemporary dance styles (Branch). Our choreography mixes vibrant modern beats with 
+      timeless Samoan songs—keeping culture alive, relevant, and powerful for every generation.
+    </p>
+  </section>
 
   <!-- What We Offer -->
   <section class="py-20 px-6 bg-black text-center">
     <h2 class="text-3xl font-bold mb-6">What We Offer</h2>
     <div class="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
-      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl hover:scale-105 transition">
+      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl transform transition hover:scale-105 hover:shadow-2xl">
         <h3 class="text-xl font-semibold mb-2">Workshops & Classes</h3>
         <p>Learn foundational Siva and Fa’ataupati, as well as contemporary dance fusion.</p>
       </div>
-      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl hover:scale-105 transition">
+      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl transform transition hover:scale-105 hover:shadow-2xl">
         <h3 class="text-xl font-semibold mb-2">Performances</h3>
         <p>We bring energy to the stage with a fusion of tradition and today’s rhythm.</p>
       </div>
-      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl hover:scale-105 transition">
+      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl transform transition hover:scale-105 hover:shadow-2xl">
         <h3 class="text-xl font-semibold mb-2">Cultural Education</h3>
         <p>Engage in the deeper meaning of Samoan movement and storytelling.</p>
       </div>
     </div>
   </section>
 
-  <!-- Class Structure Section -->
+  <!-- Classes -->
   <section class="bg-black text-white py-20 px-6 text-center">
     <h2 class="text-4xl font-bold uppercase mb-10">🔥 Class Structure 🔥</h2>
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
 
       <!-- Kids Siva -->
-      <div class="bg-teal-800 p-6 rounded-xl hover:bg-teal-700 transition cursor-pointer" onclick="toggleInfo('kids')">
+      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl cursor-pointer transition hover:bg-teal-700" onclick="toggleInfo('kidsSiva')">
         <h3 class="text-xl font-semibold mb-2">👦🏽 Kids Siva (Ages 7–12)</h3>
         <p>Tap to learn more!</p>
-        <div id="info-kids" class="class-info text-sm text-gray-200">
-          <p class="mb-2">Kids Siva introduces tamaiti to the beauty of Samoan dance through rhythm, movement, and storytelling.</p>
-          <ul class="list-disc pl-4">
+        <div id="kidsSiva" class="hidden-info mt-4 text-left text-gray-100">
+          <p class="mb-2">Kids Siva introduces tamaiti to the beauty of Samoan dance through rhythm, movement, and storytelling. It’s designed to help them grow in confidence, cultural identity, and group connection in a fun and safe space.</p>
+          <ul class="list-disc pl-6 text-sm text-gray-200">
             <li>Class duration: 45 mins</li>
+            <li>Age group: 7–12 years</li>
             <li>Focus: Coordination, rhythm, cultural pride</li>
-            <li>Music: Traditional Samoan + modern remixes</li>
+            <li>Music: Traditional Samoan beats + modern remixes</li>
           </ul>
         </div>
       </div>
 
-      <!-- Teen to Adult Siva (Sound Effect) -->
-      <div class="bg-teal-800 p-6 rounded-xl hover:bg-teal-700 transition cursor-pointer play-sound" onclick="toggleInfo('teen')">
+      <!-- Teen to Adult (with sound) -->
+      <div onclick="playClick(); location.href='#teenAdultSiva';" class="cursor-pointer bg-teal-800 p-6 rounded-2xl hover:bg-teal-600 transition play-sound">
         <h3 class="text-xl font-semibold mb-2">🧑🏽‍🦱 Teen to Adult Siva (Males Only)</h3>
-        <p>Tap to learn more!</p>
-        <div id="info-teen" class="class-info text-sm text-gray-200">
-          <p>Traditional Siva & Fa’ataupati training for young men. Focus on strength, culture, and discipline.</p>
-        </div>
+        <p>Build strength and tradition with Siva & Fa’ataupati for males.</p>
       </div>
 
-      <!-- Siva X Hip Hop -->
-      <div class="bg-teal-800 p-6 rounded-xl hover:bg-teal-700 transition cursor-pointer" onclick="toggleInfo('hiphop')">
+      <!-- Other Cards -->
+      <div onclick="location.href='#sivaHipHop';" class="cursor-pointer bg-teal-800 p-6 rounded-2xl hover:bg-teal-600 transition">
         <h3 class="text-xl font-semibold mb-2">🎶 Siva X Hip Hop</h3>
-        <p>Tap to learn more!</p>
-        <div id="info-hiphop" class="class-info text-sm text-gray-200">
-          <p>A bold fusion of Samoan tradition with hip hop choreography. Open to all genders and experience levels.</p>
-        </div>
+        <p>Modern fusion of Siva movement and Hip Hop beats.</p>
+      </div>
+
+      <div onclick="location.href='#sivaFit';" class="cursor-pointer bg-teal-800 p-6 rounded-2xl hover:bg-teal-600 transition">
+        <h3 class="text-xl font-semibold mb-2">💪🏽 Siva Fit</h3>
+        <p>Culture-inspired fitness workouts with rhythm and cardio.</p>
+      </div>
+
+      <div onclick="location.href='#showcaseCrew';" class="cursor-pointer bg-teal-800 p-6 rounded-2xl hover:bg-teal-600 transition">
+        <h3 class="text-xl font-semibold mb-2">🌟 RNB Showcase Crew</h3>
+        <p>Performance crew representing the academy in style.</p>
+      </div>
+
+      <div onclick="location.href='#cultureWorkshop';" class="cursor-pointer bg-teal-800 p-6 rounded-2xl hover:bg-teal-600 transition">
+        <h3 class="text-xl font-semibold mb-2">🌺 Culture Workshop</h3>
+        <p>Deep dive into Samoan culture, history, and movement.</p>
       </div>
 
     </div>
   </section>
 
+  <!-- Pre-Registration -->
+  <section id="contact" style="background-color: #002e2e; color: white; padding: 4rem 2rem; text-align: center;">
+    <h2 style="font-size: 2.2rem; margin-bottom: 1rem; font-weight: bold; text-transform: uppercase;">📋 Pre-Registration / Waitlist</h2>
+    <p style="font-size: 1.1rem; margin-bottom: 2rem;">Sign up to get notified when classes open! Stay in the loop with RNB Siva Academy.</p>
+
+    <form action="https://formsubmit.co/rootsnbranchacademy@hotmail.com" method="POST" style="max-width: 600px; margin: 0 auto; background-color: #004d40; padding: 2rem; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.4);">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourgithubusername.github.io/thank-you.html">
+
+      <label for="name" style="font-weight: bold;">Name:</label><br>
+      <input type="text" name="name" required style="width: 100%; padding: 0.7rem; margin-bottom: 1rem; border-radius: 5px;"><br>
+
+      <label for="email" style="font-weight: bold;">Email:</label><br>
+      <input type="email" name="email" required style="width: 100%; padding: 0.7rem; margin-bottom: 1rem; border-radius: 5px;"><br>
+
+      <label for="class" style="font-weight: bold;">Class Interest:</label><br>
+      <select name="class" required style="width: 100%; padding: 0.7rem; margin-bottom: 1rem; border-radius: 5px;">
+        <option value="">Select a class</option>
+        <option value="Kids Siva">Kids Siva</option>
+        <option value="Teen to Adult">Teen to Adult</option>
+        <option value="Siva X Hip Hop">Siva X Hip Hop</option>
+        <option value="Siva Fit">Siva Fit</option>
+        <option value="Showcase Crew">Showcase Crew</option>
+        <option value="Culture Workshop">Culture Workshop</option>
+      </select><br>
+
+      <button type="submit" style="background-color: #00bfa5; color: white; padding: 0.8rem 2rem; border: none; border-radius: 8px; font-weight: bold;">Submit</button>
+    </form>
+  </section>
+
   <!-- Footer -->
   <footer class="bg-black text-gray-500 py-6 text-center space-y-4">
-    <a href="https://www.facebook.com/profile.php?id=61575368349358&sk=about" target="_blank" class="text-teal-400 hover:underline">Follow us on Facebook</a>
-    <div>&copy; 2025 Roots N Branch Siva Academy. All rights reserved.</div>
+    <div>
+      <a href="https://www.facebook.com/profile.php?id=61575368349358&sk=about" target="_blank" class="text-teal-400 hover:underline">Follow us on Facebook</a>
+    </div>
+    <div>
+      &copy; 2025 Roots N Branch Siva Academy. All rights reserved.
+    </div>
   </footer>
 
-  <!-- Audio -->
+  <!-- Audio + Script -->
   <audio id="clickSound" src="click-sound.mp3" preload="auto"></audio>
-
-  <!-- JavaScript -->
   <script>
     function toggleInfo(id) {
-      const info = document.getElementById('info-' + id);
-      info.classList.toggle('show');
+      const infoBox = document.getElementById(id);
+      infoBox.classList.toggle("show");
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
+    function playClick() {
       const clickSound = document.getElementById("clickSound");
-      const soundCards = document.querySelectorAll(".play-sound");
-
-      soundCards.forEach(el => {
-        el.addEventListener("click", () => {
-          clickSound.currentTime = 0;
-          clickSound.play();
-        });
-      });
-    });
+      clickSound.currentTime = 0;
+      clickSound.play();
+    }
   </script>
 
 </body>
