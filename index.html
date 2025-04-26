@@ -185,6 +185,24 @@
       audio.play();
     }
   </script>
+  <script>
+    
+  function toggleCollapse(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.classList.toggle('hidden');
+    }
+  }
+
+  function playClickSound() {
+    const audio = document.getElementById("clickSound");
+    if (audio) {
+      audio.currentTime = 0;
+      audio.play();
+    }
+  }
+</script>
+
 
 </body>
 </html>
