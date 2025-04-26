@@ -122,13 +122,89 @@
   <section class="py-16 px-6 text-center tatau-border">
     <h2 class="text-3xl font-bold mb-6">What We Offer</h2>
     <div class="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
-      <!-- Workshop Cards Here (your existing cards) -->
+     <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
+        <h3 class="text-xl font-semibold mb-2">Workshops & Classes</h3>
+        <p>Learn foundational Siva and Fa’ataupati, as well as contemporary dance fusion.</p>
+      </div>
+      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
+        <h3 class="text-xl font-semibold mb-2">Performances</h3>
+        <p>We bring energy to the stage with a fusion of tradition and today’s rhythm.</p>
+      </div>
+      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
+        <h3 class="text-xl font-semibold mb-2">Cultural Education</h3>
+        <p>Engage in the deeper meaning of Samoan movement and storytelling.</p>
+      </div>
     </div>
   </section>
 
   <!-- ✅ Classes Section (your collapsible classes) -->
   <section id="classes" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-    <!-- Your existing class cards here -->
+     <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+      <h2 onclick="toggleCollapse('kidsSiva')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+        Kids Siva
+      </h2>
+      <div id="kidsSiva" class="hidden">
+        <p>Introduces our young ones to the beauty of Samoan dance through movements, timing and storytelling. It's designed to help them grow in confidence, cultural identity and group connection in a fun and safe space.</p>
+        <p class="mt-2"><strong>Duration:</strong> 45 min</p>
+        <p><strong>Age Group:</strong> 5–12 yrs</p>
+      </div>
+    </div>
+
+    <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+      <h2 onclick="toggleCollapse('teenSiva')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+        Teen to Adult Siva (Males Only)
+      </h2>
+      <div id="teenSiva" class="hidden">
+        <p>Focus on stamina, tradition & precise movements.</p>
+        <p><strong>Music:</strong> Mixture of old Samoan, modern Samoan music and drumming</p>
+        <p class="mt-2"><strong>Duration:</strong> 60 min</p>
+        <p><strong>Age Group:</strong> 13+ yrs</p>
+      </div>
+    </div>
+
+    <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+      <h2 onclick="toggleCollapse('sivaX')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+        Siva X
+      </h2>
+      <div id="sivaX" class="hidden">
+        <p>Siva X is using Samoan movements with upbeat current music creating a freedom of Xpression—a twist that still incorporates the Samoan movements, bridging the past with the present.</p>
+        <p><strong>Focus:</strong> Stamina, Samoan movements, expression and fun</p>
+        <p><strong>Music:</strong> High energy fusion, mixture of all genres</p>
+        <p class="mt-2"><strong>Duration:</strong> 60 min</p>
+        <p><strong>Open To:</strong> 13+ males</p>
+      </div>
+    </div>
+
+    <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+      <h2 onclick="toggleCollapse('sivaFit')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+        Siva Fit
+      </h2>
+      <div id="sivaFit" class="hidden">
+        <p>High energy, sweat-dripping, endorphin-boosting fitness using Samoan dance.</p>
+        <p><strong>Focus:</strong> Cardio, strength and stamina</p>
+        <p><strong>Music:</strong> Fusion of Island beats and workout hits</p>
+        <p class="mt-2"><strong>Duration:</strong> 45 min</p>
+      </div>
+    </div>
+
+    <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+      <h2 onclick="toggleCollapse('showcase')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+        RNB Showcase Crew
+      </h2>
+      <div id="showcase" class="hidden">
+        <p>This is a performance-based class for those wanting to take their siva to the next level. Pushing creative boundaries through movement, storytelling and stage presence.</p>
+        <p class="mt-2"><strong>Duration:</strong> 60 min</p>
+      </div>
+    </div>
+
+    <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+      <h2 onclick="toggleCollapse('workshop')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+        Culture Workshop
+      </h2>
+      <div id="workshop" class="hidden">
+        <p>Connect with other Polynesian, Melanesian and Micronesian cultures. RNB collaborates with leaders and performers to teach traditions and dance.</p>
+        <p class="mt-2"><strong>Frequency:</strong> Monthly or special event based</p>
+      </div>
   </section>
 
   <!-- ✅ Word of the Day -->
@@ -139,9 +215,24 @@
 
   <!-- ✅ Pre-Registration -->
   <section id="pre-register" class="bg-gray-900 border-l-4 border-teal-500 rounded-lg shadow p-6 mb-16">
-    <!-- Pre-registration form here -->
+    <h2 class="text-2xl font-semibold mb-4">📋 Pre-Registration / Waitlist</h2>
+    <form action="https://formsubmit.co/rootsnbranchacademy@hotmail.com" method="POST" class="grid gap-4">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourgithubusername.github.io/thank-you.html">
+      <input type="text" name="name" placeholder="Full Name" required class="p-3 rounded bg-black border border-teal-600 text-white">
+      <input type="email" name="email" placeholder="Email Address" required class="p-3 rounded bg-black border border-teal-600 text-white">
+      <select name="class" required class="p-3 rounded bg-black border border-teal-600 text-white">
+        <option value="">-- Select Class --</option>
+        <option value="kids">Kids Siva</option>
+        <option value="teen">Teen to Adult Siva</option>
+        <option value="sivax">Siva X</option>
+        <option value="fit">Siva Fit</option>
+        <option value="crew">RNB Showcase Crew</option>
+        <option value="workshop">Culture Workshop</option>
+      </select>
+      <button type="submit" class="bg-teal-600 hover:bg-teal-400 text-white font-bold py-2 px-4 rounded">Join the Waitlist</button>
+    </form>
   </section>
-
 </main>
 
 <!-- ✅ Footer -->
