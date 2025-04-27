@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roots N Branch Merch</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('background-pattern.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+    }
+    .coming-soon {
+      animation: fadeInUp 1s ease forwards;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+<!-- Header -->
+<header class="sticky top-0 left-0 w-full text-center shadow-lg bg-teal-700 bg-opacity-30 backdrop-blur-md z-50 p-4">
+  <a href="index.html">
+    <img src="logo.png" alt="Roots N Branch Logo" class="w-40 mx-auto">
+  </a>
+</header>
+
+<!-- Merch Section -->
+<main class="flex items-center justify-center h-screen flex-col text-center px-6">
+
+  <h1 class="text-5xl font-bold text-teal-400 mb-6 coming-soon">Roots N Branch Merch</h1>
+  
+  <p class="text-gray-300 text-xl mb-8 coming-soon">
+    🔥 Limited Edition Apparel Coming Soon 🔥  
+    <br>Rep the Movement. Honor the Culture.
+  </p>
+
+  <!-- Email Capture -->
+  <form action="https://formsubmit.co/rootsnbranchacademy@hotmail.com" method="POST" class="w-full max-w-md">
+    <input type="hidden" name="_subject" value="Roots N Branch Merch Interest">
+    <input type="email" name="email" placeholder="Enter your email for early merch access" required class="w-full p-3 rounded-full mb-4 bg-black border border-teal-500 placeholder-gray-400 text-white">
+    <button type="submit" class="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-3 px-6 rounded-full transition">
+      Notify Me
+    </button>
+  </form>
+
+</main>
+
+<!-- Footer -->
+<footer class="text-center text-gray-500 py-6">
+  <p>&copy; 2025 Roots N Branch Siva Academy. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
