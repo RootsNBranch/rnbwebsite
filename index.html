@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roots N Branch Siva Academy</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    /* Background and gentle animation */
+    /* Background and motion */
     body {
       background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('background-pattern.jpg') no-repeat center center fixed;
       background-size: cover;
@@ -27,60 +27,22 @@
       position: fixed;
       top: 0;
       left: 0;
-      z-index: 50;
+      width: 100%;
       background-color: rgba(15,118,110,0.2);
       backdrop-filter: blur(10px);
-      width: 100%;
+      z-index: 50;
       padding: 0.5rem;
     }
 
-<!-- Language Toggle Button -->
-<div class="text-center mt-2">
-  <button id="languageToggle" class="bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition">
-    Switch to Samoan
-  </button>
-</div>
-
-
-    /* Loader animation */
-    #loader {
-      transition: opacity 0.5s ease;
-    }
-
-    /* Animation effects */
+    /* Animations */
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(10px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    .animate-fade-in-slow {
-      animation: fadeInUp 1.2s ease-out forwards;
-      position: relative;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 0.6; transform: scaleX(1); }
-      50% { opacity: 1; transform: scaleX(1.05); }
-    }
-    .animate-fade-in-slow::after {
-      content: "";
-      display: block;
-      margin: 0 auto;
-      margin-top: 8px;
-      width: 80px;
-      height: 3px;
-      background-image: repeating-linear-gradient(45deg, white, white 5px, transparent 5px, transparent 10px);
-      animation: pulse 2s infinite;
-      border-radius: 3px;
-    }
-    @keyframes slideDownSmooth {
-      0% { opacity: 0; transform: translateY(-30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    .slide-down-smooth {
-      animation: slideDownSmooth 1.5s ease-out forwards;
-    }
-    .tatau-border {
-      position: relative;
-      overflow: hidden;
+    .animate-fade-in-slow { animation: fadeInUp 1.2s ease-out forwards; }
+    @keyframes moveBorder {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 0; }
     }
     .tatau-border::before {
       content: "";
@@ -91,76 +53,78 @@
       background-image: repeating-linear-gradient(45deg, white 0px, white 10px, transparent 10px, transparent 20px);
       animation: moveBorder 10s linear infinite;
     }
-    @keyframes moveBorder {
-      0% { background-position: 0 0; }
-      100% { background-position: 100px 0; }
-    }
+    .tatau-border { position: relative; overflow: hidden; }
 
-    /* Now Playing fade in */
+    /* Loader Fade */
+    #loader { transition: opacity 0.5s ease; }
+
+    /* Now Playing Banner Animation */
     @keyframes fadeInNowPlaying {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    .fade-in-now-playing {
-      animation: fadeInNowPlaying 1s ease forwards;
-    }
+    .fade-in-now-playing { animation: fadeInNowPlaying 1s ease forwards; }
   </style>
 </head>
 
 <body class="text-white font-sans">
 
-<!-- Music -->
+<!-- Background Music -->
 <audio id="backgroundMusic" src="rnb-intro.mp3" preload="auto"></audio>
 
 <!-- Loader -->
 <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
-  <img src="logo.png" alt="Loading..." class="h-28 animate-pulse">
+  <img src="logo.png" alt="Roots N Branch Logo" class="h-28 animate-pulse">
 </div>
 
 <!-- Sticky Header -->
 <header class="sticky-logo text-center shadow-lg">
   <img src="logo.png" alt="Roots N Branch Logo" class="w-52 md:w-64 mx-auto h-auto">
+
+  <!-- Language Toggle -->
+  <div class="mt-2">
+    <button id="languageToggle" class="bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition">
+      Switch to Samoan
+    </button>
+  </div>
 </header>
 
 <main class="pt-12 max-w-5xl mx-auto px-4">
-
-<!-- About Section -->
+<!-- ✅ About Section -->
 <section class="text-center mb-12 pt-40 slide-down-smooth">
-  <h1 class id="text-4xl font-bold text-white mb-4">Roots N Branch Siva Academy</h1>
-  <p class id="text-lg text-gray-300">
+  <h1 id="aboutTitle" class="text-4xl font-bold text-white mb-4">Roots N Branch Siva Academy</h1>
+  <p id="aboutDesc" class="text-lg text-gray-300">
     At RNB, we blend traditional Samoan dance forms like <em>Siva</em> and <em>Fa’ataupati</em> (Roots) with contemporary dance styles (Branch).
     Our choreography mixes vibrant modern beats with timeless Samoan songs—keeping culture alive, relevant, and powerful for every generation.
   </p>
 </section>
 
-<!-- What We Offer -->
-<section class="py-16 px-6 text-center tatau-border">
-  <h2 class id="text-3xl font-bold mb-6">What We Offer</h2>
+<!-- ✅ What We Offer Section -->
+<section class="py-16 px-6 text-center tatau-border relative">
+  <h2 id="whatWeOffer" class="text-3xl font-bold mb-6">What We Offer</h2>
   <div class="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
     <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
-      <h3 class id="text-xl font-semibold mb-2">Workshops & Classes</h3>
-      <p id>Learn foundational Siva and Fa’ataupati, as well as contemporary dance fusion.</p>
+      <h3 id="workshopsTitle" class="text-xl font-semibold mb-2">Workshops & Classes</h3>
+      <p id="workshopsDesc">Learn foundational Siva and Fa’ataupati, as well as contemporary dance fusion.</p>
     </div>
     <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
-      <h3 class id="text-xl font-semibold mb-2">Performances</h3>
-      <p id>We bring energy to the stage with a fusion of tradition and today’s rhythm.</p>
+      <h3 id="performancesTitle" class="text-xl font-semibold mb-2">Performances</h3>
+      <p id="performancesDesc">We bring energy to the stage with a fusion of tradition and today’s rhythm.</p>
     </div>
     <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
-      <h3 class id="text-xl font-semibold mb-2">Cultural Education</h3>
-      <p id>Engage in the deeper meaning of Samoan movement and storytelling.</p>
+      <h3 id="educationTitle" class="text-xl font-semibold mb-2">Cultural Education</h3>
+      <p id="educationDesc">Engage in the deeper meaning of Samoan movement and storytelling.</p>
     </div>
   </div>
 </section>
 
-<!-- Classes Section -->
+<!-- ✅ Classes Section -->
 <section id="classes" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
   <!-- Kids Siva -->
   <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
-    <h2 onclick="toggleCollapse('kidsSiva')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
-      Kids Siva
-    </h2>
+    <h2 onclick="toggleCollapse('kidsSiva')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Kids Siva</h2>
     <div id="kidsSiva" class="hidden">
-      <p>Introduces our young ones to the beauty of Samoan dance through movements, timing and storytelling. Grow confidence, cultural pride, and teamwork in a fun space.</p>
+      <p>Introduces young ones to the beauty of Samoan dance. Grow confidence, cultural pride, and teamwork.</p>
       <p class="mt-2"><strong>Duration:</strong> 45 min</p>
       <p><strong>Age Group:</strong> 5–12 yrs</p>
     </div>
@@ -168,9 +132,7 @@
 
   <!-- Teen to Adult Siva -->
   <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
-    <h2 onclick="toggleCollapse('teenSiva')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
-      Teen to Adult Siva (Males Only)
-    </h2>
+    <h2 onclick="toggleCollapse('teenSiva')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Teen to Adult Siva (Males Only)</h2>
     <div id="teenSiva" class="hidden">
       <p>Focuses on stamina, power, and precision rooted in tradition. Male-only fa'ataupati group classes.</p>
       <p class="mt-2"><strong>Duration:</strong> 60 min</p>
@@ -180,57 +142,49 @@
 
   <!-- Siva X -->
   <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
-    <h2 onclick="toggleCollapse('sivaX')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
-      Siva X
-    </h2>
+    <h2 onclick="toggleCollapse('sivaX')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Siva X</h2>
     <div id="sivaX" class="hidden">
-      <p>Fusing Samoan movements with upbeat music for a creative, free-flowing experience. Tradition + Expression.</p>
+      <p>Fusing Samoan movements with upbeat music for a free, creative experience. Tradition + Expression.</p>
       <p><strong>Duration:</strong> 60 min</p>
-      <p><strong>Age:</strong> 13+ males</p>
+      <p><strong>Open To:</strong> 13+ males</p>
     </div>
   </div>
 
   <!-- Siva Fit -->
   <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
-    <h2 onclick="toggleCollapse('sivaFit')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
-      Siva Fit
-    </h2>
+    <h2 onclick="toggleCollapse('sivaFit')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Siva Fit</h2>
     <div id="sivaFit" class="hidden">
-      <p>High energy, sweat-dripping cardio fitness with Samoan dance techniques. Fitness the RNB way!</p>
+      <p>High energy, sweat-dripping cardio fitness using Samoan movements and island beats.</p>
       <p><strong>Duration:</strong> 45 min</p>
     </div>
   </div>
 
   <!-- Showcase Crew -->
   <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
-    <h2 onclick="toggleCollapse('showcase')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
-      RNB Showcase Crew
-    </h2>
+    <h2 onclick="toggleCollapse('showcase')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">RNB Showcase Crew</h2>
     <div id="showcase" class="hidden">
-      <p>Performance-based elite group. Level up your storytelling, movement creativity, and stage presence.</p>
+      <p>Performance-based elite group. Take storytelling, movement, and stage presence to the next level.</p>
       <p><strong>Duration:</strong> 60 min</p>
     </div>
   </div>
 
   <!-- Culture Workshop -->
   <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
-    <h2 onclick="toggleCollapse('workshop')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
-      Culture Workshop
-    </h2>
+    <h2 onclick="toggleCollapse('workshop')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Culture Workshop</h2>
     <div id="workshop" class="hidden">
-      <p>Deep cultural dives with leaders from Polynesia, Melanesia, Micronesia. Events or monthly.</p>
+      <p>Deep dives into Polynesian, Melanesian, and Micronesian cultures. Events or monthly gatherings.</p>
       <p><strong>Frequency:</strong> Monthly or special events</p>
     </div>
   </div>
 </section>
 
-<!-- Word of the Day -->
+<!-- ✅ Word of the Day Section -->
 <section class="bg-teal-900 text-white p-6 rounded-xl shadow-lg mb-12 text-center">
   <h2 class="text-2xl font-bold mb-4">📖 Word of the Day <span class="text-sm italic text-teal-200">(Upu o le Aso)</span></h2>
   <div id="samoanWord" class="text-3xl font-extrabold animate-fade-in-slow relative inline-block"></div>
 </section>
 
-<!-- Spotify Playlist -->
+<!-- ✅ Spotify Playlist -->
 <section class="bg-teal-800 bg-opacity-70 py-12 rounded-xl shadow-lg my-16 text-center px-6 relative overflow-hidden">
   <div class="absolute top-0 left-0 w-full h-full pointer-events-none animate-pulse opacity-10" style="background-image: url('music-notes.png'); background-repeat: repeat; background-size: 150px;"></div>
 
@@ -241,14 +195,14 @@
     <span>Our RNB Vibes</span>
   </h2>
 
-  <p class="text-gray-300 mb-8">Feel the heartbeat of Roots N Branch </p>
+  <p class="text-gray-300 mb-8">Feel the heartbeat of Roots N Branch</p>
 
   <div class="flex justify-center">
     <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4g5kbWzn2n5JeFx2C0Q0RO?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 </section>
 
-<!-- Pre-Registration Form -->
+<!-- ✅ Pre-Registration Form -->
 <section id="pre-register" class="bg-gray-900 border-l-4 border-teal-500 rounded-lg shadow p-6 mb-16">
   <h2 class="text-2xl font-semibold mb-4">📋 Pre-Registration / Waitlist</h2>
   <form action="https://formsubmit.co/rootsnbranchacademy@hotmail.com" method="POST" class="grid gap-4">
@@ -268,9 +222,9 @@
     <button type="submit" class="bg-teal-600 hover:bg-teal-400 text-white font-bold py-2 px-4 rounded">Join the Waitlist</button>
   </form>
 </section>
-</main>
 
-<!-- Footer -->
+</main>
+<!-- ✅ Footer Section -->
 <footer class="bg-black text-gray-500 py-6 text-center space-y-4">
   <div>
     <a href="https://www.facebook.com/profile.php?id=61575368349358&sk=about" target="_blank" class="text-teal-400 hover:underline">Follow us on Facebook</a>
@@ -278,15 +232,15 @@
   <div>&copy; 2025 Roots N Branch Siva Academy. All rights reserved.</div>
 </footer>
 
-<!-- Now Playing Banner -->
-<div id="nowPlaying" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-teal-700 bg-opacity-80 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-3 hidden z-50">
+<!-- ✅ Now Playing Banner -->
+<div id="nowPlaying" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-teal-700 bg-opacity-80 text-white px-6 py-3 rounded-full shadow-lg flex items-center gap-3 hidden z-50 fade-in-now-playing">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-2v13l-12 2z" />
   </svg>
   <span class="font-semibold text-lg">Now Playing...</span>
 </div>
 
-<!-- Scripts -->
+<!-- ✅ Scripts -->
 <script>
   const backgroundMusic = document.getElementById('backgroundMusic');
   const nowPlaying = document.getElementById('nowPlaying');
@@ -312,7 +266,7 @@
       loader.style.display = 'none';
     }, 500);
 
-    // Word of the Day
+    // Word of the Day Setup
     const words = [
       { samoan: "Talofa", english: "Hello", tip: "tah-LOH-fah" },
       { samoan: "Fa'amalosi", english: "Stay strong", tip: "fah-ah-mah-LOH-see" },
@@ -329,63 +283,64 @@
     `;
   });
 
+  // Toggle Collapse for Classes
   function toggleCollapse(id) {
     const el = document.getElementById(id);
     if (el) el.classList.toggle('hidden');
   }
 </script>
+
+<!-- ✅ Language Toggle Script -->
 <script>
-// Language Data
-const translations = {
-  en: {
-    aboutTitle: "Roots N Branch Siva Academy",
-    aboutDesc: "At RNB, we blend traditional Samoan dance forms like Siva and Fa’ataupati (Roots) with contemporary dance styles (Branch). Our choreography mixes vibrant modern beats with timeless Samoan songs—keeping culture alive, relevant, and powerful for every generation.",
-    whatWeOffer: "What We Offer",
-    workshops: "Workshops & Classes",
-    workshopsDesc: "Learn foundational Siva and Fa’ataupati, as well as contemporary dance fusion.",
-    performances: "Performances",
-    performancesDesc: "We bring energy to the stage with a fusion of tradition and today’s rhythm.",
-    education: "Cultural Education",
-    educationDesc: "Engage in the deeper meaning of Samoan movement and storytelling.",
-    switchBtn: "Switch to Samoan"
-  },
-  sm: {
-    aboutTitle: "Akademi Siva Roots N Branch",
-    aboutDesc: "I RNB, matou te tu'ufa'atasia ai siva masani a Samoa pei o le Siva ma le Fa’ataupati (A'a) ma sitaili siva fou (La'au). O a matou fa'ata'ita'iga o lo'o tu'ufa'atasia ai pese fa'aleaganu'u ma pese fa'aonaponei e fa'atumauina ai le aganu'u i augatupulaga uma.",
-    whatWeOffer: "O Mea Matou te Ofoina",
-    workshops: "A'oa'oga ma Vasega",
-    workshopsDesc: "A'oa'o siva masani a Samoa e pei o le Siva ma le Fa’ataupati, fa'apea fo'i ma le tu'ufa'atasiga o siva fou.",
-    performances: "Fa'aaliga",
-    performancesDesc: "Matou te aumaia le malosi i luga o le tulaga i le tu'ufa'atasiga o tu ma aga ma musika fou.",
-    education: "A'oa'oga Fa'aaganu'u",
-    educationDesc: "Auai i le loloto o le uiga moni o gaoioiga Samoa ma tala faʻasolopito.",
-    switchBtn: "Suia i le Igilisi"
+  const translations = {
+    en: {
+      aboutTitle: "Roots N Branch Siva Academy",
+      aboutDesc: "At RNB, we blend traditional Samoan dance forms like Siva and Fa’ataupati (Roots) with contemporary dance styles (Branch). Our choreography mixes vibrant modern beats with timeless Samoan songs—keeping culture alive, relevant, and powerful for every generation.",
+      whatWeOffer: "What We Offer",
+      workshops: "Workshops & Classes",
+      workshopsDesc: "Learn foundational Siva and Fa’ataupati, as well as contemporary dance fusion.",
+      performances: "Performances",
+      performancesDesc: "We bring energy to the stage with a fusion of tradition and today’s rhythm.",
+      education: "Cultural Education",
+      educationDesc: "Engage in the deeper meaning of Samoan movement and storytelling.",
+      switchBtn: "Switch to Samoan"
+    },
+    sm: {
+      aboutTitle: "Akademi Siva Roots N Branch",
+      aboutDesc: "I RNB, matou te tu'ufa'atasia ai siva masani a Samoa pei o le Siva ma le Fa’ataupati (A'a) ma sitaili siva fou (La'au). O a matou fa'ata'ita'iga o lo'o tu'ufa'atasia ai pese fa'aleaganu'u ma pese fa'aonaponei e fa'atumauina ai le aganu'u i augatupulaga uma.",
+      whatWeOffer: "O Mea Matou te Ofoina",
+      workshops: "A'oa'oga ma Vasega",
+      workshopsDesc: "A'oa'o siva masani a Samoa e pei o le Siva ma le Fa’ataupati, fa'apea fo'i ma le tu'ufa'atasiga o siva fou.",
+      performances: "Fa'aaliga",
+      performancesDesc: "Matou te aumaia le malosi i luga o le tulaga i le tu'ufa'atasiga o tu ma aga ma musika fou.",
+      education: "A'oa'oga Fa'aaganu'u",
+      educationDesc: "Auai i le loloto o le uiga moni o gaoioiga Samoa ma tala faʻasolopito.",
+      switchBtn: "Suia i le Igilisi"
+    }
+  };
+
+  let currentLanguage = "en";
+
+  const toggleButton = document.getElementById('languageToggle');
+
+  toggleButton.addEventListener('click', () => {
+    currentLanguage = (currentLanguage === "en") ? "sm" : "en";
+    updateLanguage();
+  });
+
+  function updateLanguage() {
+    document.getElementById('aboutTitle').innerText = translations[currentLanguage].aboutTitle;
+    document.getElementById('aboutDesc').innerText = translations[currentLanguage].aboutDesc;
+    document.getElementById('whatWeOffer').innerText = translations[currentLanguage].whatWeOffer;
+    document.getElementById('workshopsTitle').innerText = translations[currentLanguage].workshops;
+    document.getElementById('workshopsDesc').innerText = translations[currentLanguage].workshopsDesc;
+    document.getElementById('performancesTitle').innerText = translations[currentLanguage].performances;
+    document.getElementById('performancesDesc').innerText = translations[currentLanguage].performancesDesc;
+    document.getElementById('educationTitle').innerText = translations[currentLanguage].education;
+    document.getElementById('educationDesc').innerText = translations[currentLanguage].educationDesc;
+    toggleButton.innerText = translations[currentLanguage].switchBtn;
   }
-};
-
-let currentLanguage = "en";
-
-const toggleButton = document.getElementById('languageToggle');
-
-toggleButton.addEventListener('click', () => {
-  currentLanguage = (currentLanguage === "en") ? "sm" : "en";
-  updateLanguage();
-});
-
-function updateLanguage() {
-  document.getElementById('aboutTitle').innerText = translations[currentLanguage].aboutTitle;
-  document.getElementById('aboutDesc').innerText = translations[currentLanguage].aboutDesc;
-  document.getElementById('whatWeOffer').innerText = translations[currentLanguage].whatWeOffer;
-  document.getElementById('workshopsTitle').innerText = translations[currentLanguage].workshops;
-  document.getElementById('workshopsDesc').innerText = translations[currentLanguage].workshopsDesc;
-  document.getElementById('performancesTitle').innerText = translations[currentLanguage].performances;
-  document.getElementById('performancesDesc').innerText = translations[currentLanguage].performancesDesc;
-  document.getElementById('educationTitle').innerText = translations[currentLanguage].education;
-  document.getElementById('educationDesc').innerText = translations[currentLanguage].educationDesc;
-  toggleButton.innerText = translations[currentLanguage].switchBtn;
-}
 </script>
-
 
 </body>
 </html>
