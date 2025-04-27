@@ -78,22 +78,20 @@
 </div>
 
 <!-- Sticky Header -->
-<header class="sticky-logo flex items-center justify-between px-6 py-2 shadow-lg backdrop-blur-md bg-teal-800 bg-opacity-20 overflow-hidden z-50" style="background: linear-gradient(rgba(15,118,110,0.2), rgba(15,118,110,0.2));">
-  <!-- Logo Centered -->
-  <div class="flex-1 text-center">
-    <img src="logo.png" alt="Roots N Branch Logo" class="w-52 md:w-64 mx-auto h-auto">
-  </div>
+<header class="sticky top-0 left-0 w-full bg-teal-800 bg-opacity-20 backdrop-blur-md shadow-lg flex items-center justify-between p-2 z-50">
+  <!-- ✅ Logo that links back to homepage -->
+  <a href="index.html" class="flex items-center space-x-2">
+    <img src="logo.png" alt="Roots N Branch Logo" class="w-36 md:w-52 max-w-full h-auto">
+    <span class="text-white font-bold hidden sm:inline">Home</span> <!-- ✅ Add small 'Home' label -->
+  </a>
 
-  <!-- Merch Button Top Right -->
-  <div class="absolute top-4 right-6">
-    <a href="merch.html" class="bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-6 rounded-full flex items-center gap-2 transition">
-      <!-- Shopping Bag Icon -->
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V5a4 4 0 00-8 0v6M5 11h14l-1 9H6l-1-9z" />
-      </svg>
-      <span>Merch</span>
-    </a>
-  </div>
+  <!-- ✅ Merch Button -->
+  <a href="merch.html" class="flex items-center bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition space-x-2">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V5a2 2 0 00-2-2H7a2 2 0 00-2 2v6m13 0v10a2 2 0 01-2 2H5a2 2 0 01-2-2V11m5-6h4" />
+    </svg>
+    <span>Merch</span>
+  </a>
 </header>
 
 
