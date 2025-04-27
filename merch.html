@@ -3,59 +3,121 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Roots N Branch Merch</title>
+  <title>Roots N Branch Merch - Coming Soon</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+    /* Background Animation */
     body {
       background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('background-pattern.jpg') no-repeat center center fixed;
       background-size: cover;
       font-family: 'Arial', sans-serif;
+      animation: moveBackground 40s ease-in-out infinite;
     }
-    .coming-soon {
-      animation: fadeInUp 1s ease forwards;
+    @keyframes moveBackground {
+      0% { background-position: center; }
+      50% { background-position: center 55%; }
+      100% { background-position: center; }
     }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+
+    /* Countdown Timer Style */
+    .countdown span {
+      font-size: 2.5rem;
+      font-weight: bold;
     }
   </style>
 </head>
 
 <body class="text-white">
 
-<!-- Header -->
-<header class="sticky top-0 left-0 w-full bg-teal-800 bg-opacity-20 backdrop-blur-md z-50 flex justify-center items-center py-2">
-  <a href="index.html" class="flex items-center">
-    <img src="logo.png" alt="Roots N Branch Logo" class="w-52 md:w-64 h-auto mx-auto">
+<!-- ✅ HEADER -->
+<header class="sticky top-0 left-0 w-full bg-teal-800 bg-opacity-20 backdrop-blur-md shadow-lg flex items-center justify-center p-4 z-50">
+  <a href="index.html" class="flex flex-col items-center space-y-1">
+    <img src="logo.png" alt="Roots N Branch Logo" class="w-28 md:w-40 max-w-full h-auto">
+    <span class="text-white font-bold text-sm">Home</span>
   </a>
 </header>
 
-<!-- Merch Section -->
-<main class="flex items-center justify-center h-screen flex-col text-center px-6">
+<!-- ✅ Main Content -->
+<main class="max-w-7xl mx-auto px-4 py-16 text-center">
 
-  <h1 class="text-5xl font-bold text-teal-400 mb-6 coming-soon">Roots N Branch Merch</h1>
-  
-  <p class="text-gray-300 text-xl mb-8 coming-soon">
-    🔥 Limited Edition Apparel Coming Soon 🔥  
-    <br>Rep the Movement. Honor the Culture.
-  </p>
+  <h1 class="text-4xl md:text-5xl font-bold mb-8 animate-pulse">🌴 RNB Merch - Coming Soon!</h1>
 
-  <!-- Email Capture -->
-  <form action="https://formsubmit.co/rootsnbranchacademy@hotmail.com" method="POST" class="w-full max-w-md">
-    <input type="hidden" name="_subject" value="Roots N Branch Merch Interest">
-    <input type="email" name="email" placeholder="Enter your email for early merch access" required class="w-full p-3 rounded-full mb-4 bg-black border border-teal-500 placeholder-gray-400 text-white">
-    <button type="submit" class="w-full bg-teal-600 hover:bg-teal-500 text-white font-bold py-3 px-6 rounded-full transition">
-      Notify Me
-    </button>
-  </form>
+  <!-- Countdown Timer -->
+  <div class="countdown bg-teal-900 bg-opacity-70 p-6 rounded-xl shadow-lg inline-block mb-12">
+    <h2 class="text-2xl font-bold mb-4">⏳ Launching In:</h2>
+    <div id="timer" class="flex justify-center space-x-8 text-teal-400"></div>
+  </div>
+
+  <!-- Product Preview Grid -->
+  <section class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+
+    <!-- Hoodie -->
+    <div class="bg-teal-800 p-6 rounded-2xl shadow-xl hover:scale-105 transition">
+      <img src="hoodie_mockup.png" alt="Black Hoodie Drop" class="w-full rounded-lg mb-6">
+      <h3 class="text-xl font-bold mb-2">Roots Black Hoodie</h3>
+      <p class="text-gray-300 mb-4">🔥 Heavyweight, ultra-comfy, culture infused.</p>
+      <span class="text-teal-300 font-bold">$65</span>
+    </div>
+
+    <!-- Slides -->
+    <div class="bg-teal-800 p-6 rounded-2xl shadow-xl hover:scale-105 transition">
+      <img src="slides_mockup.png" alt="Black Slides Drop" class="w-full rounded-lg mb-6">
+      <h3 class="text-xl font-bold mb-2">Roots Slides</h3>
+      <p class="text-gray-300 mb-4">🌴 Rock them to practice, performances or chilling.</p>
+      <span class="text-teal-300 font-bold">$35</span>
+    </div>
+
+    <!-- Socks -->
+    <div class="bg-teal-800 p-6 rounded-2xl shadow-xl hover:scale-105 transition">
+      <img src="socks_mockup.png" alt="Black Socks Drop" class="w-full rounded-lg mb-6">
+      <h3 class="text-xl font-bold mb-2">Roots Socks</h3>
+      <p class="text-gray-300 mb-4">🧦 Flex in style from head to toe.</p>
+      <span class="text-teal-300 font-bold">$18</span>
+    </div>
+
+  </section>
+
+  <p class="text-gray-400 italic">*Available for preorder soon - limited quantities*</p>
 
 </main>
 
-<!-- Footer -->
-<footer class="text-center text-gray-500 py-6">
-  <p>&copy; 2025 Roots N Branch Siva Academy. All rights reserved.</p>
+<!-- ✅ Footer -->
+<footer class="bg-black text-gray-500 py-6 text-center">
+  <div>&copy; 2025 Roots N Branch Siva Academy. All rights reserved.</div>
 </footer>
+
+<!-- ✅ Countdown Script -->
+<script>
+  // Set Drop Date - (Example: 3 months from today)
+  const dropDate = new Date();
+  dropDate.setMonth(dropDate.getMonth() + 3);
+
+  function updateCountdown() {
+    const now = new Date();
+    const diff = dropDate - now;
+
+    if (diff <= 0) {
+      document.getElementById('timer').innerHTML = "<span>Dropped!</span>";
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / 1000 / 60) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('timer').innerHTML = `
+      <span>${days}d</span>
+      <span>${hours}h</span>
+      <span>${minutes}m</span>
+      <span>${seconds}s</span>
+    `;
+  }
+
+  setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>
 
 </body>
 </html>
