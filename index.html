@@ -307,6 +307,36 @@
     }, 500);
   });
 </script>
+<script>
+  // Word of the Day
+  const words = [
+    { samoan: "Talofa", english: "Hello", tip: "tah-LOH-fah" },
+    { samoan: "Fa'amalosi", english: "Stay strong", tip: "fah-ah-mah-LOH-see" },
+    { samoan: "Aiga", english: "Family", tip: "eye-ING-ah" },
+    { samoan: "Fa’afetai", english: "Thank you", tip: "fah-ah-feh-TIE" },
+    { samoan: "Mālō", english: "Well done", tip: "MAH-loh" },
+    { samoan: "Tautua", english: "Serve", tip: "tau-TWO-ah" },
+    { samoan: "Tofa soifua", english: "Goodbye", tip: "toh-fah soy-FOO-ah" }
+  ];
+  const random = words[Math.floor(Math.random() * words.length)];
+  const samoanWord = document.getElementById("samoanWord");
+  if (samoanWord) {
+    samoanWord.innerHTML = `
+      ${random.samoan}<br/>
+      <span class="block text-lg font-medium mt-2 text-teal-200 italic animate-pulse">
+        "${random.english}" – ${random.tip}
+      </span>
+    `;
+  }
+
+  // Toggle Class Collapse
+  function toggleCollapse(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.classList.toggle('hidden');
+    }
+  }
+</script>
 
 </body>
 </html>
