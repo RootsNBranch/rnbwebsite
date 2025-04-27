@@ -224,7 +224,6 @@
   </section>
 <!-- 🎵 Our RNB Vibes - Spotify Playlist Section -->
 <section class="bg-teal-800 bg-opacity-70 py-12 rounded-xl shadow-lg my-16 text-center px-6 relative overflow-hidden">
-  <div class="absolute top-0 left-0 w-full h-full pointer-events-none animate-pulse opacity-10" style="background-image: url('music-notes.png'); background-repeat: repeat; background-size: 150px;"></div>
 
   <h2 class="text-3xl font-bold mb-4 flex items-center justify-center space-x-2 text-white">
     <svg class="w-8 h-8 text-teal-300 animate-bounce" fill="currentColor" viewBox="0 0 20 20">
@@ -285,21 +284,23 @@
   const backgroundMusic = document.getElementById('backgroundMusic');
   const nowPlaying = document.getElementById('nowPlaying');
 
-  window.addEventListener('click', startMusicOnce);
-  window.addEventListener('scroll', startMusicOnce);
+  let musicStarted = false; // Flag to check if music started
 
-  function startMusicOnce() {
-    if (backgroundMusic.paused) {
-     backgroundMusic.volume = 1.0; // 🔥 Turn up volume
-    backgroundMusic.play().catch((e) => {
-      console.error('Music play failed:', e);
-    });
-      nowPlaying.classList.remove('hidden');
-      nowPlaying.classList.add('fade-in-now-playing');
+  function tryStartMusic() {
+    if (!musicStarted) {
+      backgroundMusic.volume = 0.5;
+      backgroundMusic.play().then(() => {
+        musicStarted = true;
+        nowPlaying.classList.remove('hidden');
+        nowPlaying.classList.add('fade-in-now-playing');
+      }).catch((err) => {
+        console.log('Music play failed:', err);
+      });
     }
-    window.removeEventListener('click', startMusicOnce);
-    window.removeEventListener('scroll', startMusicOnce);
   }
+
+  window.addEventListener('click', tryStartMusic);
+  window.addEventListener('scroll', tryStartMusic);
 
   window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
@@ -307,29 +308,26 @@
     setTimeout(() => {
       loader.style.display = 'none';
     }, 500);
+
+    // (Optional) If you want Word of the Day to load right on page load
+    const words = [
+      { samoan: "Talofa", english: "Hello", tip: "tah-LOH-fah" },
+      { samoan: "Fa'amalosi", english: "Stay strong", tip: "fah-ah-mah-LOH-see" },
+      { samoan: "Aiga", english: "Family", tip: "eye-ING-ah" },
+      { samoan: "Fa’afetai", english: "Thank you", tip: "fah-ah-feh-TIE" },
+      { samoan: "Mālō", english: "Well done", tip: "MAH-loh" },
+      { samoan: "Tautua", english: "Serve", tip: "tau-TWO-ah" },
+      { samoan: "Tofa soifua", english: "Goodbye", tip: "toh-fah soy-FOO-ah" }
+    ];
+    const random = words[Math.floor(Math.random() * words.length)];
+    const samoanWordElement = document.getElementById("samoanWord");
+    if (samoanWordElement) {
+      samoanWordElement.innerHTML = `
+        ${random.samoan}<br/>
+        <span class="block text-lg font-medium mt-2 text-teal-200 italic animate-pulse">"${random.english}" – ${random.tip}</span>
+      `;
+    }
   });
-</script>
-<script>
-  // Word of the Day
-  const words = [
-    { samoan: "Talofa", english: "Hello", tip: "tah-LOH-fah" },
-    { samoan: "Fa'amalosi", english: "Stay strong", tip: "fah-ah-mah-LOH-see" },
-    { samoan: "Aiga", english: "Family", tip: "eye-ING-ah" },
-    { samoan: "Fa’afetai", english: "Thank you", tip: "fah-ah-feh-TIE" },
-    { samoan: "Mālō", english: "Well done", tip: "MAH-loh" },
-    { samoan: "Tautua", english: "Serve", tip: "tau-TWO-ah" },
-    { samoan: "Tofa soifua", english: "Goodbye", tip: "toh-fah soy-FOO-ah" }
-  ];
-  const random = words[Math.floor(Math.random() * words.length)];
-  const samoanWord = document.getElementById("samoanWord");
-  if (samoanWord) {
-    samoanWord.innerHTML = `
-      ${random.samoan}<br/>
-      <span class="block text-lg font-medium mt-2 text-teal-200 italic animate-pulse">
-        "${random.english}" – ${random.tip}
-      </span>
-    `;
-  }
 
   // Toggle Class Collapse
   function toggleCollapse(id) {
