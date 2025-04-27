@@ -80,6 +80,42 @@
 
   <p class="text-gray-400 italic">*Available for preorder soon - limited quantities*</p>
 
+<!-- ✅ Voting Section -->
+<section class="bg-teal-900 text-white p-8 rounded-xl shadow-lg mb-16 text-center">
+  <h2 class="text-3xl font-bold mb-4">🗳️ Vote for Our Next Drop!</h2>
+  <p class="text-gray-300 mb-6">Which merch should launch next? Choose below!</p>
+
+  <form id="voteForm" class="space-y-4">
+    <div class="flex flex-col sm:flex-row justify-center gap-6">
+      <label class="cursor-pointer">
+        <input type="radio" name="vote" value="Beanie" class="hidden peer">
+        <div class="p-4 bg-teal-800 rounded-lg peer-checked:ring-4 ring-teal-400 transition">
+          🧢 Beanie
+        </div>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="vote" value="Bucket Hat" class="hidden peer">
+        <div class="p-4 bg-teal-800 rounded-lg peer-checked:ring-4 ring-teal-400 transition">
+          🎩 Bucket Hat
+        </div>
+      </label>
+      <label class="cursor-pointer">
+        <input type="radio" name="vote" value="Oversized Tee" class="hidden peer">
+        <div class="p-4 bg-teal-800 rounded-lg peer-checked:ring-4 ring-teal-400 transition">
+          👕 Oversized Tee
+        </div>
+      </label>
+    </div>
+
+    <button type="submit" class="mt-6 bg-teal-600 hover:bg-teal-400 text-white font-bold py-3 px-6 rounded-full">
+      Submit Vote
+    </button>
+  </form>
+
+  <div id="voteThanks" class="hidden mt-8 text-teal-300 text-xl font-semibold animate-pulse">
+    Thank you for voting! 💬
+  </div>
+</section>
 </main>
 
 <!-- ✅ Footer -->
@@ -117,6 +153,13 @@
 
   setInterval(updateCountdown, 1000);
   updateCountdown();
+document.getElementById('voteForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  // Normally you'd send data to server here
+  document.getElementById('voteForm').classList.add('hidden');
+  document.getElementById('voteThanks').classList.remove('hidden');
+});
+
 </script>
 
 </body>
