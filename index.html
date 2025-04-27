@@ -7,6 +7,66 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+<!-- ✅ Hidden Unlock Item + Secret Popup -->
+<div class="relative mt-16 text-center">
+  <!-- 🌴 Hidden Button -->
+  <button id="secretButton" class="absolute top-0 left-4 text-2xl opacity-10 hover:opacity-100 transition">
+    🌴
+  </button>
+
+  <!-- 🎁 Secret Item Reveal -->
+  <div id="secretItem" class="hidden mt-12 bg-teal-800 p-6 rounded-xl shadow-lg text-white">
+    <h2 class="text-3xl font-bold mb-4">🌺 Secret Drop Unlocked!</h2>
+    <p class="text-lg mb-4">You found it! Here's an exclusive Limited Edition Wristband available ONLY for secret hunters.</p>
+    <button class="bg-teal-600 hover:bg-teal-400 text-white font-bold py-2 px-4 rounded-full">
+      🔥 Claim It Soon
+    </button>
+
+    <!-- 🏆 Secret Hunter Badge -->
+    <div class="mt-8">
+      <div class="inline-block bg-yellow-400 text-black font-bold px-6 py-2 rounded-full shadow-lg animate-wiggle">
+        🏆 Official RNB Secret Hunter
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 🎉 Popup Animation -->
+<div id="popup" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
+  <div class="bg-white text-black p-8 rounded-xl shadow-2xl text-center animate-bounceIn">
+    <h2 class="text-3xl font-bold mb-4">🎉 You Found the Secret!</h2>
+    <p class="text-lg mb-4">Exclusive drop unlocked!</p>
+    <button id="closePopup" class="mt-4 bg-teal-600 hover:bg-teal-400 text-white font-bold py-2 px-4 rounded">
+      Awesome!
+    </button>
+  </div>
+</div>
+
+<!-- ✨ Keyframes for Glow + Popup + Wiggle Badge -->
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.5); }
+  60% { opacity: 1; transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+@keyframes subtleGlow {
+  0% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+  50% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
+  100% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+}
+@keyframes strongGlow {
+  0% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
+  50% { box-shadow: 0 0 25px rgba(0, 255, 200, 0.7); }
+  100% { box-shadow: 0 0 0px rgba(0, 255, 200, 0); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+.animate-bounceIn { animation: bounceIn 0.7s ease forwards; }
+.animate-glow-soft { animation: subtleGlow 2s infinite; }
+.animate-glow-strong { animation: strongGlow 2s infinite; }
+.animate-wiggle { animation: wiggle 1.5s ease-in-out infinite; }
+
     /* Background and motion */
     body {
       background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('background-pattern.jpg') no-repeat center center fixed;
@@ -260,6 +320,35 @@
 
 <!-- ✅ Scripts -->
 <script>
+<script>
+const secretBtn = document.getElementById('secretButton');
+const secretItem = document.getElementById('secretItem');
+const popup = document.getElementById('popup');
+const closePopup = document.getElementById('closePopup');
+
+// 🧨 Show popup and reveal secret
+secretBtn.addEventListener('click', function() {
+  popup.classList.remove('hidden');
+  secretItem.classList.remove('hidden');
+});
+
+// ✨ Close popup
+closePopup.addEventListener('click', function() {
+  popup.classList.add('hidden');
+});
+
+// ⏳ Glow Timers
+// First - Soft subtle glow after 2 minutes
+setTimeout(() => {
+  secretBtn.classList.add('animate-glow-soft');
+}, 120000); // 2 minutes (120,000 ms)
+
+// Second - Stronger glow after 5 minutes
+setTimeout(() => {
+  secretBtn.classList.remove('animate-glow-soft');
+  secretBtn.classList.add('animate-glow-strong');
+}, 300000); // 5 minutes (300,000 ms)
+
  const header = document.getElementById('mainHeader');
   const logo = document.getElementById('logo');
 
