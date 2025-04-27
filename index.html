@@ -290,8 +290,10 @@
 
   function startMusicOnce() {
     if (backgroundMusic.paused) {
-      backgroundMusic.volume = 0.5;
-      backgroundMusic.play();
+     backgroundMusic.volume = 1.0; // 🔥 Turn up volume
+    backgroundMusic.play().catch((e) => {
+      console.error('Music play failed:', e);
+    });
       nowPlaying.classList.remove('hidden');
       nowPlaying.classList.add('fade-in-now-playing');
     }
