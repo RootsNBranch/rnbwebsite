@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Roots N Branch Siva Academy</title>
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -15,7 +15,6 @@
       padding-top: 100px;
       font-family: 'Arial', sans-serif;
       animation: moveBackground 40s ease-in-out infinite;
-      margin: 0;
     }
     @keyframes moveBackground {
       0%, 100% { background-position: center; }
@@ -64,78 +63,76 @@
 </head>
 
 <body class="text-white font-sans">
-  <audio id="backgroundMusic" src="rnb-intro.mp3" preload="auto"></audio>
+<audio id="backgroundMusic" src="rnb-intro.mp3" preload="auto"></audio>
 
-  <!-- Loader -->
-  <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
-    <img src="logo.png" alt="Roots N Branch Logo" class="h-28 animate-pulse" />
+<!-- Loader -->
+<div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
+  <img src="logo.png" alt="Roots N Branch Logo" class="h-28 animate-pulse">
+</div>
+
+<!-- Header -->
+<header id="mainHeader" class="sticky top-0 left-0 w-full bg-teal-800 bg-opacity-20 backdrop-blur-md shadow-lg flex items-center justify-between p-2 z-50 transition-all duration-300">
+  <!-- Language Toggle (Left) -->
+  <div class="flex items-center">
+    <button id="languageToggle" class="bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition">
+      Switch to Samoan
+    </button>
   </div>
 
-  <!-- Header -->
-  <header id="mainHeader" class="sticky top-0 left-0 w-full bg-teal-800 bg-opacity-20 backdrop-blur-md shadow-lg flex items-center justify-between p-2 z-50 transition-all duration-300">
-    <!-- Language Toggle (Left) -->
-    <div class="flex items-center">
-      <button id="languageToggle" class="bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition" aria-label="Switch Language">
-        Switch to Samoan
-      </button>
+  <!-- Logo (Center) -->
+  <div class="absolute left-1/2 transform -translate-x-1/2 text-center">
+    <a href="index.html" class="flex flex-col items-center space-y-1">
+      <img id="logo" src="logo.png" alt="Roots N Branch Logo" class="w-36 md:w-52 max-w-full h-auto transition-all duration-300">
+      <span class="text-white font-bold text-sm">Home</span>
+    </a>
+  </div>
+
+  <!-- Merch Button (Right) -->
+  <div class="flex items-center">
+    <a href="merch.html" class="flex items-center bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition space-x-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V5a2 2 0 00-2-2H7a2 2 0 00-2 2v6m13 0v10a2 2 0 01-2 2H5a2 2 0 01-2-2V11m5-6h4" />
+      </svg>
+      <span>Merch</span>
+    </a>
+  </div>
+</header>
+<main class="pt-12 max-w-5xl mx-auto px-4">
+
+<!-- About Section -->
+<section class="text-center mb-12 pt-40 slide-down-smooth">
+  <h1 id="aboutTitle" class="text-4xl font-bold text-white mb-4">Roots N Branch Siva Academy</h1>
+  <p id="aboutDesc" class="text-lg text-gray-300">
+ About Us
+Roots N Branch Siva Academy is an **all-male Samoan dance academy** blending traditional movements like fa‘ataupati with modern choreography and music. We’re not a typical cultural school — we focus on refining dance technique, building stage-ready performers , and pushing the boundaries of Samoan dance in the entertainment space.
+We empower Polynesian males through movement, discipline, and identity — honoring our roots while creating something bold, new, and made for the spotlight.
+  </p>
+</section>
+
+<!-- What We Offer Section -->
+<section class="py-16 px-6 text-center tatau-border relative">
+  <h2 id="whatWeOffer" class="text-3xl font-bold mb-6">What We Offer</h2>
+  <div class="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
+    <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
+      <h3 id="workshopsTitle" class="text-xl font-semibold mb-2">Workshops & Classes</h3>
+      <p id="workshopsDesc">Learn foundational Siva and Fa’ataupati movements , as well as contemporary dance fusion.</p>
     </div>
-
-    <!-- Logo (Center) -->
-    <div class="absolute left-1/2 transform -translate-x-1/2 text-center pointer-events-none">
-      <a href="index.html" class="flex flex-col items-center space-y-1 pointer-events-auto" aria-label="Go to Home Page">
-        <img id="logo" src="logo.png" alt="Roots N Branch Logo" class="w-36 md:w-52 max-w-full h-auto transition-all duration-300" />
-        <span class="text-white font-bold text-sm">Home</span>
-      </a>
+    <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
+      <h3 id="performancesTitle" class="text-xl font-semibold mb-2">Performances</h3>
+      <p id="performancesDesc">We bring energy to the stage with a fusion of traditional based movements and today’s rhythm.</p>
     </div>
-
-    <!-- Merch Button (Right) -->
-    <div class="flex items-center">
-      <a href="merch.html" class="flex items-center bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition space-x-2" aria-label="Merchandise Page">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V5a2 2 0 00-2-2H7a2 2 0 00-2 2v6m13 0v10a2 2 0 01-2 2H5a2 2 0 01-2-2V11m5-6h4" />
-        </svg>
-        <span>Merch</span>
-      </a>
+    <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
+      <h3 id="educationTitle" class="text-xl font-semibold mb-2">Cultural Education</h3>
+      <p id="educationDesc">Engage in the deeper meaning of Samoan movement and storytelling.</p>
     </div>
-  </header>
-
-  <main class="pt-12 max-w-5xl mx-auto px-4">
-
-    <!-- About Section -->
-    <section class="text-center mb-12 pt-40 slide-down-smooth">
-      <h1 id="aboutTitle" class="text-4xl font-bold text-white mb-4">Roots N Branch Siva Academy</h1>
-      <p id="aboutDesc" class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-        About Us<br />
-        Roots N Branch Siva Academy is an <strong>all-male Samoan dance academy</strong> blending traditional movements like fa‘ataupati with modern choreography and music. We’re not a typical cultural school — we focus on refining dance technique, building stage-ready performers, and pushing the boundaries of Samoan dance in the entertainment space.<br /><br />
-        We empower Polynesian males through movement, discipline, and identity — honoring our roots while creating something bold, new, and made for the spotlight.
-      </p>
-    </section>
-
-    <!-- What We Offer Section -->
-    <section class="py-16 px-6 text-center tatau-border relative">
-      <h2 id="whatWeOffer" class="text-3xl font-bold mb-6">What We Offer</h2>
-      <div class="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
-        <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
-          <h3 id="workshopsTitle" class="text-xl font-semibold mb-2">Workshops & Classes</h3>
-          <p id="workshopsDesc">Learn foundational Siva and Fa’ataupati movements, as well as contemporary dance fusion.</p>
-        </div>
-        <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
-          <h3 id="performancesTitle" class="text-xl font-semibold mb-2">Performances</h3>
-          <p id="performancesDesc">We bring energy to the stage with a fusion of traditional based movements and today’s rhythm.</p>
-        </div>
-        <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
-          <h3 id="educationTitle" class="text-xl font-semibold mb-2">Cultural Education</h3>
-          <p id="educationDesc">Engage in the deeper meaning of Samoan movement and storytelling.</p>
-        </div>
-      </div>
-    </section>
+  </div>
+</section>
 
 <!-- Classes Section -->
-<section>
 <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
-<button onclick="toggleCollapse('TamaTane')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition" aria-expanded="false">
-  Teen to Adult Siva
-</button>
+  <h2 onclick="toggleCollapse('TamaTane')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+    Teen to Adult Siva
+  </h2>
   <div id="TamaTane" class="hidden space-y-2">
     <p>Focuses on being graceful, powerful stances, and precise movements that are branched from Samoan Siva and Faataupati.</p>
 
@@ -350,10 +347,10 @@ window.addEventListener('load', () => {
     { samoan: "Tofa soifua", english: "Goodbye", tip: "toh-fah soy-FOO-ah" }
   ];
   const random = words[Math.floor(Math.random() * words.length)];
-  document.getElementById("samoanWord").innerHTML = `
+  document.getElementById("samoanWord").innerHTML = 
     ${random.samoan}<br/>
     <span class="block text-lg font-medium mt-2 text-teal-200 italic animate-pulse">"${random.english}" – ${random.tip}</span>
-  `;
+  ;
 });
 
 // Toggle Collapse Function
@@ -428,3 +425,4 @@ function updateLanguage() {
 </body>
 
 </html>
+
