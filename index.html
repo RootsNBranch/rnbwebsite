@@ -129,27 +129,24 @@ We empower Polynesian males through movement, discipline, and identity — honor
 </section>
 
 <!-- Classes Section -->
-<section class="space-y-6">
-  <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
-    <h2 onclick="toggleCollapse('Tama Tane')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
-      Teen to Adult Siva
-    </h2>
-    <div id="Tama Tane" class="hidden">
-      <p>Focuses on being graceful, powerful stances, and precise movements that are branched from Samoan Siva and Faataupati.</p>
+<div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
+  <h2 onclick="toggleCollapse('TamaTane')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">
+    Teen to Adult Siva
+  </h2>
+  <div id="TamaTane" class="hidden space-y-2">
+    <p>Focuses on being graceful, powerful stances, and precise movements that are branched from Samoan Siva and Faataupati.</p>
 
-      <!-- 🔽 IMAGE INSERTED HERE -->
-      <div class="my-4">
-        <img 
-          src="polynesian-warrior.png"  
-          class="rounded-lg border-4 border-teal-600 w-full max-w-md mx-auto"
-        >
-      </div>
-      <!-- 🔼 IMAGE ENDS HERE -->
+    <!-- 🔽 IMAGE INSERTED HERE -->
+    <img id="warriorImage"
+      src="polynesian-warrior.png"
+      class="transition-all duration-500 ease-in-out max-w-xs"
+      alt="polynesian-warrior" />
+    <!-- 🔼 IMAGE ENDS HERE -->
 
-      <p class="mt-2"><strong>Duration:</strong> 60 min</p>
-      <p><strong>Age Group:</strong> 13+ yrs</p>
-    </div>
+    <p class="mt-2"><strong>Duration:</strong> 60 min</p>
+    <p><strong>Age Group:</strong> 13+ yrs</p>
   </div>
+</div>
 
   <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
     <h2 onclick="toggleCollapse('sivaFit')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Siva Fit</h2>
@@ -411,7 +408,20 @@ function updateLanguage() {
   document.getElementById('educationDesc').innerText = translations[currentLanguage].educationDesc;
   toggleButton.innerText = translations[currentLanguage].switchBtn;
 }
-</script>
+  function toggleCollapse(id) {
+    const content = document.getElementById(id);
+    const image = document.getElementById("warriorImage");
 
+    if (content.classList.contains("hidden")) {
+      content.classList.remove("hidden");
+      image.classList.remove("max-w-xs");
+      image.classList.add("max-w-md");
+    } else {
+      content.classList.add("hidden");
+      image.classList.remove("max-w-md");
+      image.classList.add("max-w-xs");
+    }
+</script>
 </body>
+
 </html>
