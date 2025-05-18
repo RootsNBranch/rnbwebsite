@@ -10,18 +10,15 @@
     /* Background and motion */
     body {
       background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('background-pattern.jpg') no-repeat center center fixed;
-@@ -77,9 +17,8 @@
       animation: moveBackground 40s ease-in-out infinite;
     }
     @keyframes moveBackground {
       0% { background-position: center; }
-      0%, 100% { background-position: center; }
       50% { background-position: center 55%; }
       100% { background-position: center; }
     }
 
-    /* Sticky transparent header */
-@@ -94,68 +33,61 @@
+    header {
       padding: 0.5rem;
     }
 
@@ -30,88 +27,112 @@
       0% { opacity: 0; transform: translateY(10px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    /* Keyframes */
-    @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(10px); } 100% { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeInNowPlaying { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
-    @keyframes moveBorder { 0% { background-position: 0 0; } 100% { background-position: 100px 0; } }
-    @keyframes bounceIn { 0% { opacity: 0; transform: scale(0.5); } 60% { opacity: 1; transform: scale(1.2); } 100% { transform: scale(1); } }
-    @keyframes subtleGlow { 0%, 100% { box-shadow: 0 0 0px rgba(255,255,255,0); } 50% { box-shadow: 0 0 10px rgba(255,255,255,0.3); } }
-    @keyframes strongGlow { 0%, 100% { box-shadow: 0 0 0px rgba(0,255,200,0); } 50% { box-shadow: 0 0 25px rgba(0,255,200,0.7); } }
-    @keyframes wiggle { 0%, 100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg); } }
-
-    .animate-fade-in-slow { animation: fadeInUp 1.2s ease-out forwards; }
-    @keyframes moveBorder {
-      0% { background-position: 0 0; }
-      100% { background-position: 100px 0; }
-    }
-    .fade-in-now-playing { animation: fadeInNowPlaying 1s ease forwards; }
-    .animate-bounceIn { animation: bounceIn 0.7s ease forwards; }
-    .animate-glow-soft { animation: subtleGlow 2s infinite; }
-    .animate-glow-strong { animation: strongGlow 2s infinite; }
-    .animate-wiggle { animation: wiggle 1.5s ease-in-out infinite; }
-
-    .tatau-border { position: relative; overflow: hidden; }
-    .tatau-border::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 4px;
-      top: 0; left: 0; width: 100%; height: 4px;
-      background-image: repeating-linear-gradient(45deg, white 0px, white 10px, transparent 10px, transparent 20px);
-      animation: moveBorder 10s linear infinite;
-    }
-    .tatau-border { position: relative; overflow: hidden; }
-
-    /* Loader Fade */
-    #loader { transition: opacity 0.5s ease; }
-
-    /* Now Playing Banner Animation */
     @keyframes fadeInNowPlaying {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    .fade-in-now-playing { animation: fadeInNowPlaying 1s ease forwards; }
+    @keyframes moveBorder {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 0; }
+    }
+    @keyframes bounceIn {
+      0% { opacity: 0; transform: scale(0.5); }
+      60% { opacity: 1; transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    @keyframes subtleGlow {
+      0%, 100% { box-shadow: 0 0 0px rgba(255,255,255,0); }
+      50% { box-shadow: 0 0 10px rgba(255,255,255,0.3); }
+    }
+    @keyframes strongGlow {
+      0%, 100% { box-shadow: 0 0 0px rgba(0,255,200,0); }
+      50% { box-shadow: 0 0 25px rgba(0,255,200,0.7); }
+    }
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(-2deg); }
+      50% { transform: rotate(2deg); }
+    }
+
+    .animate-fade-in-slow {
+      animation: fadeInUp 1.2s ease-out forwards;
+    }
+    .animate-bounceIn {
+      animation: bounceIn 0.7s ease forwards;
+    }
+    .animate-glow-soft {
+      animation: subtleGlow 2s infinite;
+    }
+    .animate-glow-strong {
+      animation: strongGlow 2s infinite;
+    }
+    .animate-wiggle {
+      animation: wiggle 1.5s ease-in-out infinite;
+    }
+
+    .tatau-border {
+      position: relative;
+      overflow: hidden;
+    }
+    .tatau-border::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-image: repeating-linear-gradient(45deg, white 0px, white 10px, transparent 10px, transparent 20px);
+      animation: moveBorder 10s linear infinite;
+    }
+
+    /* Loader Fade */
+    #loader {
+      transition: opacity 0.5s ease;
+    }
   </style>
 </head>
 
 <body class="text-white font-sans">
+  <header class="tatau-border bg-black bg-opacity-70 text-white">
+    <h1 class="text-3xl font-bold">Roots N Branch Siva Academy</h1>
+  </header>
 
-<!-- Background Music -->
-<audio id="backgroundMusic" src="rnb-intro.mp3" preload="auto"></audio>
+  <!-- Background Music -->
+  <audio id="backgroundMusic" src="rnb-intro.mp3" preload="auto"></audio>
 
-<!-- Loader -->
-<div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
-  <img src="logo.png" alt="Roots N Branch Logo" class="h-28 animate-pulse">
-</div>
-
-<!-- Sticky Header -->
-<header id="mainHeader" class="sticky top-0 left-0 w-full bg-teal-800 bg-opacity-20 backdrop-blur-md shadow-lg flex items-center justify-between p-2 z-50 transition-all duration-300">
-  
-  <!-- Language Toggle (Left) -->
-  <div class="flex items-center">
-    <button id="languageToggle" class="bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition">
-      Switch to Samoan
-    </button>
+  <!-- Loader -->
+  <div id="loader" class="fixed inset-0 bg-black flex items-center justify-center z-50">
+    <img src="logo.png" alt="Roots N Branch Logo" class="h-28 animate-pulse">
   </div>
 
-  <!-- Centered Logo (Fixed Smaller When Scrolling) -->
-  <div class="absolute left-1/2 transform -translate-x-1/2 text-center">
-    <a href="index.html" class="flex flex-col items-center space-y-1">
-      <img id="logo" src="logo.png" alt="Roots N Branch Logo" class="w-36 md:w-52 max-w-full h-auto transition-all duration-300">
-      <span class="text-white font-bold text-sm">Home</span>
-    </a>
-  </div>
+  <!-- Sticky Header -->
+  <header id="mainHeader" class="sticky top-0 left-0 w-full bg-teal-800 bg-opacity-20 backdrop-blur-md shadow-lg flex items-center justify-between p-2 z-50 transition-all duration-300">
+    
+    <!-- Language Toggle (Left) -->
+    <div class="flex items-center">
+      <button id="languageToggle" class="bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition">
+        Switch to Samoan
+      </button>
+    </div>
 
-  <!-- Merch Button (Right) -->
-  <div class="flex items-center">
-    <a href="merch.html" class="flex items-center bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition space-x-2">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <span>Merch</span>
-    </a>
-  </div>
+    <!-- Centered Logo (Fixed Smaller When Scrolling) -->
+    <div class="absolute left-1/2 transform -translate-x-1/2 text-center">
+      <a href="index.html" class="flex flex-col items-center space-y-1">
+        <img id="logo" src="logo.png" alt="Roots N Branch Logo" class="w-36 md:w-52 max-w-full h-auto transition-all duration-300">
+        <span class="text-white font-bold text-sm">Home</span>
+      </a>
+    </div>
 
-</header>
+    <!-- Merch Button (Right) -->
+    <div class="flex items-center">
+      <a href="merch.html" class="flex items-center bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        <span>Merch</span>
+      </a>
+    </div>
+
+  </header>
 
 <main class="pt-12 max-w-5xl mx-auto px-4">
 <!-- ✅ About Section -->
@@ -120,17 +141,27 @@
 <section class="text-center mb-12 pt-40 slide-down-smooth">
   <h1 id="aboutTitle" class="text-4xl font-bold text-white mb-4">Roots N Branch Siva Academy</h1>
   <p id="aboutDesc" class="text-lg text-gray-300">
-@@ -177,7 +108,7 @@
   </p>
 </section>
 
 <!-- ✅ What We Offer Section -->
-<section class="py-16 px-6 text-center tatau-border relative">
-  <h2 id="whatWeOffer" class="text-3xl font-bold mb-6">What We Offer</h2>
-  <div class="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
-
-  </div>
-</section>
+  <section class="py-16 px-6 text-center tatau-border">
+    <h2 class="text-3xl font-bold mb-6">What We Offer</h2>
+    <div class="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
+     <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
+        <h3 class="text-xl font-semibold mb-2">Workshops & Classes</h3>
+        <p>Learn foundational Siva and Fa’ataupati, as well as contemporary dance fusion.</p>
+      </div>
+      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
+        <h3 class="text-xl font-semibold mb-2">Performances</h3>
+        <p>We bring energy to the stage with a fusion of tradition and today’s rhythm.</p>
+      </div>
+      <div class="bg-teal-800 p-6 rounded-2xl shadow-xl">
+        <h3 class="text-xl font-semibold mb-2">Cultural Education</h3>
+        <p>Engage in the deeper meaning of Samoan movement and storytelling.</p>
+      </div>
+    </div>
+  </section>
 
 <!-- ✅ Classes Section -->
 <section id="classes" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
@@ -161,6 +192,7 @@
     <h2 onclick="toggleCollapse('workshop')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Culture Workshop</h2>
     <div id="workshop" class="hidden">
   </div>
+
 </section>
 
 <!-- ✅ Word of the Day Section -->
@@ -180,6 +212,7 @@
 <section id="pre-register" class="bg-gray-900 border-l-4 border-teal-500 rounded-lg shadow p-6 mb-16">
   <h2 class="text-2xl font-semibold mb-4">📋 Pre-Registration / Waitlist</h2>
   <form action="https://formsubmit.co/rootsnbranchacademy@hotmail.com" method="POST" class="grid gap-4">
+  </form>
 </section>
 
 </main>
