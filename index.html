@@ -219,34 +219,20 @@ function startMusicOnce() {
   window.removeEventListener('click', startMusicOnce);
   window.removeEventListener('scroll', startMusicOnce);
 }
- const header = document.getElementById('mainHeader');
-  const logo = document.getElementById('logo');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-      logo.classList.remove('w-36', 'md:w-52');
-      logo.classList.add('w-24', 'md:w-32'); // Smaller on scroll
-    } else {
-      logo.classList.remove('w-24', 'md:w-32');
-      logo.classList.add('w-36', 'md:w-52'); // Original size
-  
-// Logo Resize on Scroll
 const header = document.getElementById('mainHeader');
 const logo = document.getElementById('logo');
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 30) {
     logo.classList.remove('w-36', 'md:w-52');
-    logo.classList.add('w-24', 'md:w-32'); // Smaller when scrolled
+    logo.classList.add('w-24', 'md:w-32'); // Smaller on scroll
   } else {
     logo.classList.remove('w-24', 'md:w-32');
-    logo.classList.add('w-36', 'md:w-52'); // Normal size
+    logo.classList.add('w-36', 'md:w-52'); // Original size
   }
 });
 
-  const backgroundMusic = document.getElementById('backgroundMusic');
-  const nowPlaying = document.getElementById('nowPlaying');
-// Word of the Day
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
   loader.classList.add('opacity-0');
@@ -270,24 +256,16 @@ window.addEventListener('load', () => {
   `;
 });
 
-  window.addEventListener('click', startMusicOnce);
-  window.addEventListener('scroll', startMusicOnce);
+window.addEventListener('click', startMusicOnce);
+window.addEventListener('scroll', startMusicOnce);
+
 // Toggle Collapse Function
 function toggleCollapse(id) {
   const el = document.getElementById(id);
   if (el) el.classList.toggle('hidden');
 }
 
-  function startMusicOnce() {
-    if (backgroundMusic.paused) {
-      backgroundMusic.volume = 0.5;
-      backgroundMusic.play();
-      nowPlaying.classList.remove('hidden');
-      nowPlaying.classList.add('fade-in-now-playing');
-    }
-    window.removeEventListener('click', startMusicOnce);
-    window.removeEventListener('scroll', startMusicOnce);
-// Language Toggle
+// Translation data
 const translations = {
   en: {
     aboutTitle: "Roots N Branch Siva Academy",
@@ -315,85 +293,9 @@ const translations = {
   }
 };
 
-  window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
-    loader.classList.add('opacity-0');
-    setTimeout(() => {
-      loader.style.display = 'none';
-    }, 500);
-
-    // Word of the Day Setup
-    const words = [
-      { samoan: "Talofa", english: "Hello", tip: "tah-LOH-fah" },
-      { samoan: "Fa'amalosi", english: "Stay strong", tip: "fah-ah-mah-LOH-see" },
-      { samoan: "Aiga", english: "Family", tip: "eye-ING-ah" },
-      { samoan: "Fa’afetai", english: "Thank you", tip: "fah-ah-feh-TIE" },
-      { samoan: "Mālō", english: "Well done", tip: "MAH-loh" },
-      { samoan: "Tautua", english: "Serve", tip: "tau-TWO-ah" },
-      { samoan: "Tofa soifua", english: "Goodbye", tip: "toh-fah soy-FOO-ah" }
-    ];
-    const random = words[Math.floor(Math.random() * words.length)];
-    document.getElementById("samoanWord").innerHTML = `
-      ${random.samoan}<br/>
-      <span class="block text-lg font-medium mt-2 text-teal-200 italic animate-pulse">"${random.english}" – ${random.tip}</span>
-    `;
-  });
-
-  // Toggle Collapse for Classes
-  function toggleCollapse(id) {
-    const el = document.getElementById(id);
-    if (el) el.classList.toggle('hidden');
-  }
 let currentLanguage = "en";
 
-   translations = {
-    en: {
-      aboutTitle: "Roots N Branch Siva Academy",
-      aboutDesc: "At RNB, we blend traditional Samoan dance forms like Siva and Fa’ataupati (Roots) with contemporary dance styles (Branch). Our choreography mixes vibrant modern beats with timeless Samoan songs—keeping culture alive, relevant, and powerful for every generation.",
-      whatWeOffer: "What We Offer",
-      workshops: "Workshops & Classes",
-      workshopsDesc: "Learn foundational Siva and Fa’ataupati, as well as contemporary dance fusion.",
-      performances: "Performances",
-      performancesDesc: "We bring energy to the stage with a fusion of tradition and today’s rhythm.",
-      education: "Cultural Education",
-      educationDesc: "Engage in the deeper meaning of Samoan movement and storytelling.",
-      switchBtn: "Switch to Samoan"
-    },
-    sm: {
-      aboutTitle: "Akademi Siva Roots N Branch",
-      aboutDesc: "I RNB, matou te tu'ufa'atasia ai siva masani a Samoa pei o le Siva ma le Fa’ataupati (A'a) ma sitaili siva fou (La'au). O a matou fa'ata'ita'iga o lo'o tu'ufa'atasia ai pese fa'aleaganu'u ma pese fa'aonaponei e fa'atumauina ai le aganu'u i augatupulaga uma.",
-      whatWeOffer: "O Mea Matou te Ofoina",
-      workshops: "A'oa'oga ma Vasega",
-      workshopsDesc: "A'oa'o siva masani a Samoa e pei o le Siva ma le Fa’ataupati, fa'apea fo'i ma le tu'ufa'atasiga o siva fou.",
-      performances: "Fa'aaliga",
-      performancesDesc: "Matou te aumaia le malosi i luga o le tulaga i le tu'ufa'atasiga o tu ma aga ma musika fou.",
-      education: "A'oa'oga Fa'aaganu'u",
-      educationDesc: "Auai i le loloto o le uiga moni o gaoioiga Samoa ma tala faʻasolopito.",
-      switchBtn: "Suia i le Igilisi"
-    }
-  };
-
-  currentLanguage = "en";
-
-  const toggleButton = document.getElementById('languageToggle');
-
-  toggleButton.addEventListener('click', () => {
-    currentLanguage = (currentLanguage === "en") ? "sm" : "en";
-    updateLanguage();
-  });
-
-  function updateLanguage() {
-    document.getElementById('aboutTitle').innerText = translations[currentLanguage].aboutTitle;
-    document.getElementById('aboutDesc').innerText = translations[currentLanguage].aboutDesc;
-    document.getElementById('whatWeOffer').innerText = translations[currentLanguage].whatWeOffer;
-    document.getElementById('workshopsTitle').innerText = translations[currentLanguage].workshops;
-    document.getElementById('workshopsDesc').innerText = translations[currentLanguage].workshopsDesc;
-    document.getElementById('performancesTitle').innerText = translations[currentLanguage].performances;
-    document.getElementById('performancesDesc').innerText = translations[currentLanguage].performancesDesc;
-    document.getElementById('educationTitle').innerText = translations[currentLanguage].education;
-    document.getElementById('educationDesc').innerText = translations[currentLanguage].educationDesc;
-    toggleButton.innerText = translations[currentLanguage].switchBtn;
-  }
+const toggleButton = document.getElementById('languageToggle');
 
 toggleButton.addEventListener('click', () => {
   currentLanguage = (currentLanguage === "en") ? "sm" : "en";
@@ -411,6 +313,7 @@ function updateLanguage() {
   document.getElementById('educationTitle').innerText = translations[currentLanguage].education;
   document.getElementById('educationDesc').innerText = translations[currentLanguage].educationDesc;
   toggleButton.innerText = translations[currentLanguage].switchBtn;
+}
 </script>
 
 </body>
