@@ -165,7 +165,7 @@ We empower Polynesian males through movement, discipline, and identity — honor
   <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
     <h2 onclick="toggleCollapse('workshop')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Culture Workshop</h2>
     <div id="workshop" class="hidden">
-      <p>Deep dives into Polynesian, Melanesian, and Micronesian cultures. Events or monthly gatherings.</p>
+      <p>Deep dives into Polynesian, Melanesian, and Micronesian cultures. monthly gatherings.</p>
       <p><strong>Frequency:</strong> Monthly or special events</p>
     </div>
   </div>
@@ -214,9 +214,7 @@ We empower Polynesian males through movement, discipline, and identity — honor
 
     <select name="class" required class="p-3 rounded bg-black border border-teal-600 text-white">
       <option value="">-- Select Class --</option>
-      <option value="kids">Kids Siva</option>
       <option value="teen">Teen to Adult Siva</option>
-      <option value="sivax">Siva X</option>
       <option value="fit">Siva Fit</option>
       <option value="crew">RNB Showcase Crew</option>
       <option value="workshop">Culture Workshop</option>
@@ -264,9 +262,6 @@ We empower Polynesian males through movement, discipline, and identity — honor
     <div class="mt-8">
       <div class="inline-block bg-yellow-400 text-black font-bold px-6 py-2 rounded-full shadow-lg animate-wiggle">
         🏆 Official RNB Secret Hunter
-      </div>
-    </div>
-  </div>
 </div>
 
 <!-- Popup Animation -->
@@ -318,11 +313,6 @@ closePopup.addEventListener('click', function() {
 setTimeout(() => {
   secretBtn.classList.add('animate-glow-soft');
 }, 12000); // After 2 min soft glow
-
-setTimeout(() => {
-  secretBtn.classList.remove('animate-glow-soft');
-  secretBtn.classList.add('animate-glow-strong');
-}, 300000); // After 5 min stronger glow
 
 // Logo Resize on Scroll
 const header = document.getElementById('mainHeader');
