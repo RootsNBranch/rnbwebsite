@@ -215,11 +215,25 @@
   </div>
 
 <!-- ✅ Pre-Registration Form -->
-<section id="pre-register" class="bg-gray-900 border-l-4 border-teal-500 rounded-lg shadow p-6 mb-16">
-  <h2 class="text-2xl font-semibold mb-4">📋 Pre-Registration / Waitlist</h2>
-  <form action="https://formsubmit.co/rootsnbranchacademy@hotmail.com" method="POST" class="grid gap-4">
-  </form>
-</section>
+  <section id="pre-register" class="bg-gray-900 border-l-4 border-teal-500 rounded-lg shadow p-6 mb-16">
+    <h2 class="text-2xl font-semibold mb-4">📋 Pre-Registration / Waitlist</h2>
+    <form action="https://formsubmit.co/rootsnbranchacademy@hotmail.com" method="POST" class="grid gap-4">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://yourgithubusername.github.io/thank-you.html">
+      <input type="text" name="name" placeholder="Full Name" required class="p-3 rounded bg-black border border-teal-600 text-white">
+      <input type="email" name="email" placeholder="Email Address" required class="p-3 rounded bg-black border border-teal-600 text-white">
+      <select name="class" required class="p-3 rounded bg-black border border-teal-600 text-white">
+        <option value="">-- Select Class --</option>
+        <option value="kids">Kids Siva</option>
+        <option value="teen">Teen to Adult Siva</option>
+        <option value="sivax">Siva X</option>
+        <option value="fit">Siva Fit</option>
+        <option value="crew">RNB Showcase Crew</option>
+        <option value="workshop">Culture Workshop</option>
+      </select>
+      <button type="submit" class="bg-teal-600 hover:bg-teal-400 text-white font-bold py-2 px-4 rounded">Join the Waitlist</button>
+    </form>
+  </section>
 
 </main>
 <!-- ✅ Footer Section -->
