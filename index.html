@@ -7,66 +7,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-<!-- ✅ Hidden Unlock Item + Secret Popup -->
-<div class="relative mt-16 text-center">
-  <!-- 🌴 Hidden Button -->
-  <button id="secretButton" class="absolute top-0 left-4 text-2xl opacity-10 hover:opacity-100 transition">
-    🌴
-  </button>
-
-  <!-- 🎁 Secret Item Reveal -->
-  <div id="secretItem" class="hidden mt-12 bg-teal-800 p-6 rounded-xl shadow-lg text-white">
-    <h2 class="text-3xl font-bold mb-4">🌺 Secret Drop Unlocked!</h2>
-    <p class="text-lg mb-4">You found it! Here's an exclusive Limited Edition Wristband available ONLY for secret hunters.</p>
-    <button class="bg-teal-600 hover:bg-teal-400 text-white font-bold py-2 px-4 rounded-full">
-      🔥 Claim It Soon
-    </button>
-
-    <!-- 🏆 Secret Hunter Badge -->
-    <div class="mt-8">
-      <div class="inline-block bg-yellow-400 text-black font-bold px-6 py-2 rounded-full shadow-lg animate-wiggle">
-        🏆 Official RNB Secret Hunter
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- 🎉 Popup Animation -->
-<div id="popup" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
-  <div class="bg-white text-black p-8 rounded-xl shadow-2xl text-center animate-bounceIn">
-    <h2 class="text-3xl font-bold mb-4">🎉 You Found the Secret!</h2>
-    <p class="text-lg mb-4">Exclusive drop unlocked!</p>
-    <button id="closePopup" class="mt-4 bg-teal-600 hover:bg-teal-400 text-white font-bold py-2 px-4 rounded">
-      Awesome!
-    </button>
-  </div>
-</div>
-
-<!-- ✨ Keyframes for Glow + Popup + Wiggle Badge -->
-@keyframes bounceIn {
-  0% { opacity: 0; transform: scale(0.5); }
-  60% { opacity: 1; transform: scale(1.2); }
-  100% { transform: scale(1); }
-}
-@keyframes subtleGlow {
-  0% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
-  50% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); }
-  100% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
-}
-@keyframes strongGlow {
-  0% { box-shadow: 0 0 0px rgba(255, 255, 255, 0); }
-  50% { box-shadow: 0 0 25px rgba(0, 255, 200, 0.7); }
-  100% { box-shadow: 0 0 0px rgba(0, 255, 200, 0); }
-}
-@keyframes wiggle {
-  0%, 100% { transform: rotate(-2deg); }
-  50% { transform: rotate(2deg); }
-}
-.animate-bounceIn { animation: bounceIn 0.7s ease forwards; }
-.animate-glow-soft { animation: subtleGlow 2s infinite; }
-.animate-glow-strong { animation: strongGlow 2s infinite; }
-.animate-wiggle { animation: wiggle 1.5s ease-in-out infinite; }
-
     /* Background and motion */
     body {
       background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('background-pattern.jpg') no-repeat center center fixed;
@@ -146,10 +86,8 @@
 </div>
 
 <!-- Sticky Header -->
-<!-- Header -->
 <header id="mainHeader" class="sticky top-0 left-0 w-full bg-teal-800 bg-opacity-20 backdrop-blur-md shadow-lg flex items-center justify-between p-2 z-50 transition-all duration-300">
   
-  <!-- Language Toggle (Far Left) -->
   <!-- Language Toggle (Left) -->
   <div class="flex items-center">
     <button id="languageToggle" class="bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition">
@@ -158,7 +96,6 @@
   </div>
 
   <!-- Centered Logo (Fixed Smaller When Scrolling) -->
-  <!-- Logo (Center) -->
   <div class="absolute left-1/2 transform -translate-x-1/2 text-center">
     <a href="index.html" class="flex flex-col items-center space-y-1">
       <img id="logo" src="logo.png" alt="Roots N Branch Logo" class="w-36 md:w-52 max-w-full h-auto transition-all duration-300">
@@ -166,12 +103,10 @@
     </a>
   </div>
 
-  <!-- Merch Button (Top Right) -->
   <!-- Merch Button (Right) -->
   <div class="flex items-center">
     <a href="merch.html" class="flex items-center bg-teal-600 hover:bg-teal-500 text-white font-bold py-2 px-4 rounded-full transition space-x-2">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-@@ -164,11 +96,10 @@
       <span>Merch</span>
     </a>
   </div>
@@ -190,38 +125,20 @@
 </section>
 
 <!-- ✅ What We Offer Section -->
-<!-- What We Offer Section -->
 <section class="py-16 px-6 text-center tatau-border relative">
   <h2 id="whatWeOffer" class="text-3xl font-bold mb-6">What We Offer</h2>
   <div class="flex flex-col md:flex-row justify-center gap-8 max-w-4xl mx-auto">
-@@ -196,9 +127,8 @@
+
   </div>
 </section>
 
 <!-- ✅ Classes Section -->
-<!-- Classes Section -->
 <section id="classes" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-16">
-  <!-- Kids Siva -->
-  <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
-    <h2 onclick="toggleCollapse('kidsSiva')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Kids Siva</h2>
-    <div id="kidsSiva" class="hidden">
-@@ -208,7 +138,6 @@
-    </div>
-  </div>
 
   <!-- Teen to Adult Siva -->
   <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
     <h2 onclick="toggleCollapse('teenSiva')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Teen to Adult Siva (Males Only)</h2>
     <div id="teenSiva" class="hidden">
-@@ -218,7 +147,6 @@
-    </div>
-  </div>
-
-  <!-- Siva X -->
-  <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
-    <h2 onclick="toggleCollapse('sivaX')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Siva X</h2>
-    <div id="sivaX" class="hidden">
-@@ -228,7 +156,6 @@
     </div>
   </div>
 
@@ -229,7 +146,6 @@
   <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
     <h2 onclick="toggleCollapse('sivaFit')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Siva Fit</h2>
     <div id="sivaFit" class="hidden">
-@@ -237,7 +164,6 @@
     </div>
   </div>
 
@@ -237,7 +153,6 @@
   <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
     <h2 onclick="toggleCollapse('showcase')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">RNB Showcase Crew</h2>
     <div id="showcase" class="hidden">
-@@ -246,7 +172,6 @@
     </div>
   </div>
 
@@ -245,37 +160,30 @@
   <div class="bg-teal-800 text-white rounded-lg shadow-xl p-6 class-card">
     <h2 onclick="toggleCollapse('workshop')" class="text-2xl font-semibold mb-2 cursor-pointer hover:text-teal-300 transition">Culture Workshop</h2>
     <div id="workshop" class="hidden">
-@@ -256,13 +181,13 @@
   </div>
 </section>
 
 <!-- ✅ Word of the Day Section -->
-<!-- Word of the Day -->
 <section class="bg-teal-900 text-white p-6 rounded-xl shadow-lg mb-12 text-center">
   <h2 class="text-2xl font-bold mb-4">📖 Word of the Day <span class="text-sm italic text-teal-200">(Upu o le Aso)</span></h2>
   <div id="samoanWord" class="text-3xl font-extrabold animate-fade-in-slow relative inline-block"></div>
 </section>
 
 <!-- ✅ Spotify Playlist -->
-<!-- Spotify Playlist -->
 <section class="bg-teal-800 bg-opacity-70 py-12 rounded-xl shadow-lg my-16 text-center px-6 relative overflow-hidden">
   <div class="absolute top-0 left-0 w-full h-full pointer-events-none animate-pulse opacity-10" style="background-image: url('music-notes.png'); background-repeat: repeat; background-size: 150px;"></div>
 
-@@ -280,7 +205,7 @@
   </div>
 </section>
 
 <!-- ✅ Pre-Registration Form -->
-<!-- Pre-Registration Form -->
 <section id="pre-register" class="bg-gray-900 border-l-4 border-teal-500 rounded-lg shadow p-6 mb-16">
   <h2 class="text-2xl font-semibold mb-4">📋 Pre-Registration / Waitlist</h2>
   <form action="https://formsubmit.co/rootsnbranchacademy@hotmail.com" method="POST" class="grid gap-4">
-@@ -302,164 +227,194 @@
 </section>
 
 </main>
 <!-- ✅ Footer Section -->
-<!-- Footer -->
 <footer class="bg-black text-gray-500 py-6 text-center space-y-4">
   <div>
     <a href="https://www.facebook.com/profile.php?id=61575368349358&sk=about" target="_blank" class="text-teal-400 hover:underline">Follow us on Facebook</a>
@@ -294,54 +202,12 @@
 
 <!-- ✅ Scripts -->
 <script>
-<!-- Hidden Unlock Secret Feature -->
-<div class="relative mt-16 text-center">
-  <!-- Hidden Button -->
-  <button id="secretButton" class="absolute top-0 left-4 text-2xl opacity-10 hover:opacity-100 transition">
-    🌴
-  </button>
-
-  <!-- Secret Item Reveal -->
-  <div id="secretItem" class="hidden mt-12 bg-teal-800 p-6 rounded-xl shadow-lg text-white">
-    <h2 class="text-3xl font-bold mb-4">🌺 Secret Drop Unlocked!</h2>
-    <p class="text-lg mb-4">You found it! Here's an exclusive Limited Edition Wristband available ONLY for secret hunters.</p>
-    <button class="bg-teal-600 hover:bg-teal-400 text-white font-bold py-2 px-4 rounded-full">
-      🔥 Claim It Soon
-    </button>
-
-    <!-- Secret Hunter Badge -->
-    <div class="mt-8">
-      <div class="inline-block bg-yellow-400 text-black font-bold px-6 py-2 rounded-full shadow-lg animate-wiggle">
-        🏆 Official RNB Secret Hunter
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Popup Animation -->
-<div id="popup" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center hidden z-50">
-  <div class="bg-white text-black p-8 rounded-xl shadow-2xl text-center animate-bounceIn">
-    <h2 class="text-3xl font-bold mb-4">🎉 You Found the Secret!</h2>
-    <p class="text-lg mb-4">Exclusive drop unlocked!</p>
-    <button id="closePopup" class="mt-4 bg-teal-600 hover:bg-teal-400 text-white font-bold py-2 px-4 rounded">
-      Awesome!
-    </button>
-  </div>
-</div>
-
-<!-- Scripts -->
-<script>
 const backgroundMusic = document.getElementById('backgroundMusic');
 const nowPlaying = document.getElementById('nowPlaying');
 const secretBtn = document.getElementById('secretButton');
 const secretItem = document.getElementById('secretItem');
 const popup = document.getElementById('popup');
 const closePopup = document.getElementById('closePopup');
-
-// 🧨 Show popup and reveal secret
-// Background Music Start
-window.addEventListener('click', startMusicOnce);
-window.addEventListener('scroll', startMusicOnce);
 
 function startMusicOnce() {
   if (backgroundMusic.paused) {
@@ -353,32 +219,6 @@ function startMusicOnce() {
   window.removeEventListener('click', startMusicOnce);
   window.removeEventListener('scroll', startMusicOnce);
 }
-
-// Secret Button Actions
-secretBtn.addEventListener('click', function() {
-  popup.classList.remove('hidden');
-  secretItem.classList.remove('hidden');
-});
-
-// ✨ Close popup
-closePopup.addEventListener('click', function() {
-  popup.classList.add('hidden');
-});
-
-// ⏳ Glow Timers
-// First - Soft subtle glow after 2 minutes
-// Secret Button Glow Effects
-setTimeout(() => {
-  secretBtn.classList.add('animate-glow-soft');
-}, 120000); // 2 minutes (120,000 ms)
-}, 120000); // After 2 min soft glow
-
-// Second - Stronger glow after 5 minutes
-setTimeout(() => {
-  secretBtn.classList.remove('animate-glow-soft');
-  secretBtn.classList.add('animate-glow-strong');
-}, 300000); // 5 minutes (300,000 ms)
-
  const header = document.getElementById('mainHeader');
   const logo = document.getElementById('logo');
 
@@ -389,10 +229,7 @@ setTimeout(() => {
     } else {
       logo.classList.remove('w-24', 'md:w-32');
       logo.classList.add('w-36', 'md:w-52'); // Original size
-    }
-  });
-}, 300000); // After 5 min stronger glow
-
+  
 // Logo Resize on Scroll
 const header = document.getElementById('mainHeader');
 const logo = document.getElementById('logo');
