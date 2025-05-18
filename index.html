@@ -346,8 +346,6 @@ const translations = {
   }
 let currentLanguage = "en";
 
-<!-- ✅ Language Toggle Script -->
-<script>
   const translations = {
     en: {
       aboutTitle: "Roots N Branch Siva Academy",
@@ -396,7 +394,6 @@ let currentLanguage = "en";
     document.getElementById('educationDesc').innerText = translations[currentLanguage].educationDesc;
     toggleButton.innerText = translations[currentLanguage].switchBtn;
   }
-const toggleButton = document.getElementById('languageToggle');
 
 toggleButton.addEventListener('click', () => {
   currentLanguage = (currentLanguage === "en") ? "sm" : "en";
